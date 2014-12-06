@@ -1,0 +1,5 @@
+public class CopyListwithRandomPointer{
+    public RandomListNode copyRandomList(RandomListNode head){
+        if(head == null
+    }
+}

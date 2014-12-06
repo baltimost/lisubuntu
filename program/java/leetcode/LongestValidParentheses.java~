@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class LongestValidParentheses{
+    public static int longestValidParentheses(String s){
+        Stack<Character> stack = new Stack<Character>();
+        int invalid = 0;
+        for(int i = 0;i < s.length();i++){
+            if(s.charAt(i) == '(')
+                stack.push('(');
+            if(s.charAt(i) == ')'){
+                if(stack.isEmpty())
+                    invalid++;
+                else
+                    stack.pop();
+            }
+        }
+        return s.length() - invalid - stack.size();
+
+    }
+    public static void main(String[] args){
+        String test = "()(()";
+        System.out.println(longestValidParentheses(test));
+    }
+}

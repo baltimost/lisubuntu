@@ -1,0 +1,4 @@
+void countSort(char *str){
+    char output[strlen(str)];
+
+    int cou

@@ -1,0 +1,98 @@
+import java.util.*;
+
+public class PalindromePartitioningII{
+    /*
+public int minCut(String s){ 
+        if(s == null)
+            return 0;
+        List<List<String>> output = new ArrayList<List<String>>();
+        List<String> combination = new ArrayList<String>();
+        helper(output, 0, combination, s);
+        int min = Integer.MAX_VALUE;
+        for(List<String> x: output)
+            min = Math.min(x.size(), min);
+        return min;
+    }
+    private void helper(List<List<String>> output, int level, List<String> combination, String s){
+        if(s.equals("")){
+            List<String> entry = new ArrayList<String>();
+            for(int i = 0;i < combination.size();i++)
+                entry.add(combination.get(i));
+            output.add(entry);
+            return;
+        }
+        String left, right;
+        for(int i = 1;i <= s.length();i++){
+            left = s.substring(0,i);
+            if(isPalindrome(left)){
+                if(level >= combination.size())
+                    combination.add(left);
+                else
+                    combination.set(level, left);
+                right = s.substring(i);
+                helper(output, level + 1, combination, right);
+                for(int j = level + 1;j < combination.size();j++)
+                    combination.remove(j);
+            } 
+        }
+    } 
+    public boolean isPalindrome(String s){
+        for(int i = 0, j = s.length() - 1;i < j;i++,j--){
+            if(s.charAt(i) != s.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+    */
+    public int minCut(String s){ 
+        if(s == null)
+            return 0;
+        Queue<List<String>> queue = new LinkedList<List<String>>();
+        List<String> entry = new ArrayList<String>();
+        entry.add(s);
+        queue.offer(entry);
+        while(!entry.isEmpty()){
+            entry = queue.poll();
+            String laststring = entry.get(entry.size() - 1);
+            if(isPalindrome(laststring))
+                return entry.size();
+            else{
+                for(int i = 1;i <= laststring.length();i++){
+                    String left = laststring.substring(0,i);
+                    if(isPalindrome(left)){
+                        String right = laststring.substring(i);
+                        List<String> newentry = new ArrayList<String>();
+                        for(int j = 0;j < entry.size() - 1;j++)
+                            newentry.add(entry.get(j));
+                        newentry.add(left);
+                        newentry.add(right);
+                        queue.offer(newentry);
+                    }
+                }
+            }
+        }
+        return 0;
+    }
+    public boolean isPalindrome(String s){
+        for(int i = 0, j = s.length() - 1;i < j;i++,j--){
+            if(s.charAt(i) != s.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+    /*
+    */
+    public static void main(String[] args){
+        long start = System.currentTimeMillis();
+        PalindromePartitioningII pp = new PalindromePartitioningII();
+        //String test = "ldskjfalxdfabababababababababababcbabababababababababa";
+        String test = "ldskjfalxdfabababababababababababcbabababababababababa";
+        System.out.println(pp.minCut(test));
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+    }
+}

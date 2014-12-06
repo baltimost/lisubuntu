@@ -1,0 +1,3 @@
+tree:
+construct from orders
+postorder traverse

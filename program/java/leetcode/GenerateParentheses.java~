@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class GenerateParentheses{
+    /*
+    ArrayList<String> rst = new ArrayList<String>();
+    public ArrayList<String> generateParenthesis(int n) {
+        //ArrayList<String> rst = new ArrayList<String>();
+        if(n <= 0) {
+            return rst;
+        }
+        getPair("", n, n);
+        return rst;
+}
+    
+	public void getPair(String s, int left, int right) {
+		if(left > right || left < 0 || right < 0) {
+            System.out.println("++++ " + s);
+			return; 	
+		}
+		if(left == 0 && right == 0) {
+			rst.add(s);
+			return;
+		}
+
+		getPair(s + "(", left - 1, right);
+		getPair(s + ")", left, right - 1);
+	}
+    */
+
+    public static void main(String[] args){
+        GenerateParentheses gp = new GenerateParentheses();
+        ArrayList<String> output = gp.generateParenthesis(3);
+        for(String x:output)
+            System.out.println(x);
+    }
+}

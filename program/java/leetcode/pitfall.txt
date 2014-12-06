@@ -1,0 +1,31 @@
+Balanced Binary Tree
+return -1 is better than maxvalue, and -1 is detected, we should return -1 immediately. It is not necessary to calculate other info any more.
+
+Binary Tree Max Depth
+Don't need helper;
+
+Binary Tree Min Depth
+Don't need helper;
+If l || r == 0, return max(l, r).
+
+Binary Search
+(l <= h) notice =
+
+BinaryTree zigzag
+curr = s1 or s2 's order is not the same;
+
+Path Sum I II
+should have if(root.left == null && root.right == null) ...
+II
+notice the remove place should be at the bottom;
+
+MaxPath Sum
+notice negative number
+
+SubsetII PermutationII
+continue condition basically means the same thing in different expression if(!visited[i-1]) equals to if(i == start)
+
+BFS
+first visit than offer including Surrounded Region
+
+

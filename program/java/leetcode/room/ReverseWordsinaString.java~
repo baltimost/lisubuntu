@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class ReverseWordsinaString{
+    public static String reverseWords(String s){
+        Stack<String> stack = new Stack<String>();
+        String output = "";
+        String word = "";
+        boolean started = false;
+        for(int i = 0;i < s.length();i++){
+            if(s.charAt(i) != ' '){
+                started = true;
+                word += s.charAt(i);
+            } 
+            else if(started){
+                started = false;
+                stack.push(word);
+                word = "";
+            }
+        }
+        if(started)
+            stack.push(word);
+        
+        while(!stack.isEmpty()){
+            output += stack.pop();
+            if(!stack.isEmpty())
+                output += " ";
+        }
+        return output;
+    }
+    public static void main(String[] args){
+        String test = "  To be   continued  ";
+        System.out.println(reverseWords(test));
+    }
+}
