@@ -1,0 +1,93 @@
+What is the difference between shell and terminal?
+Terminal can but not only can execute shell code. For example, terminal can also do something with ssh.
+
+Basics:
+
+touch
+pwd
+ls -a
+ls -ld
+file
+cd -
+cd ~ == cd
+
+hostname
+uname -u
+id
+
+firefox &
+history
+!!
+esc+. reuse the last commands' parameter
+su -
+
+jobs
+bg
+fg
+
+cat /proc/cpuinfo
+cat /proc/meminfo
+
+date
+hwclockk
+cal
+uptime ;can see how long this system's been launched
+
+cat/head/tail -n 15;tail -f test.txt, echo "this is ..">> test.txt
+more
+less
+
+Hardware info:
+lspic -v
+lsusb -v
+
+Compression and packing:
+zip linuxcast.zip myfile
+unzip linuxcast.zip
+
+tar -c(v)f out.tar linuxcast
+tar -x(v)f out.tar
+tar -c(v)zf backup.tar.gz /etc ;calling gzip to do some compression(tar itself cannot compress)
+
+find . -name *.txt
+find . -name "*.txt" ;echo find . -name *.txt
+find . -name "cena*" -exec rm {} \;	//";"included
+find . -perm 777
+find . -name "a*" -exec ls -l {} \;
+
+INSTALL VIM:
+For Debian
+sudo apt-get install rpm
+rpm -qa | grep vi
+
+For Fedora
+yum install -y vim-X11 vim-common vim-enhanced vim-minimal
+
+set expandtab ;transfer tab to spaces
+set tabstop=4
+set shiftwidth=4
+set number	;save to ~/yourprofile/.vimrc
+
+yum clean all
+
+About Guest Addition
+eject cd manually first, and install it
+
+???
+man 5 ls
+man -k
+
+
+::Problems in practice
+1.The one when gnome-terminal doesn't work
+sudo apt-get update
+sudo apt-get install gnome-terminal
+
+
+::If a software is installed
+dpkg -s openssh-client
+or
+dpkg-query -l | grep ssh
+
+::Count number of files in a directory
+ls -l targetdir | wc -l

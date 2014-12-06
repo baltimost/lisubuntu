@@ -1,0 +1,52 @@
+vi /etc/passwd
+pushkin:x:1000:1000:Pushkin,,,:/home/pushkin:/bin/bash
+username::userid:grpid:descrp :hoome dir    :usrshell
+
+
+Firstly, su 
+vi /etc/shadow
+pushkin:$6$nXaE2RM4$1q9KIkOxIBBEvDJq/QmldVWv.eMCf9BJdd.Sn7yCjsWvBiuTVStw.4cC/5VCkwGgmcPkcH1MsXkKlApx4qMH30:16061:0:99999:7:::
+(del !!, then su no need to enter passwd)
+$encryptype$salt$encryptedtext
+
+whoami
+who
+w
+
+User Group operating
+useradd haha_lili
+passwd haha_lili
+ll /home
+cd /etc/skei/
+touch www.linuxcast.net
+
+useradd -u 666 -G haha_li testuser2
+
+usermod -u 888 testuser1
+usermod -l newtestuser testuser1
+userdel -r(del home) nash_su
+
+groupadd linuxcast
+groupmod -n newname oldname
+groupmod -g newGid oldGid
+groupdel linuxcast
+
+Who owns the files&folds?
+UGO 3groups, 9permissions
+chown -R(recursive,captive R required) nash_su linucast.net
+chgrp nash_su linucast.net
+
+HINTS!!
+as for fold, r+x browse, cannot delete, rwx can delete
+as for file, rw cannot delete, x can delete
+
+Changing permission:
+chmod u/g/o/a+rw linuxcast.net
+(even if a file's permission is ---, so long as it's fold is rwx, it can be deleted by any user)
+
+suid
+-rwsr-xr-x. 1 root root 27172 Feb 16 2013 /usr/bin/passwd
+chmod u/g+s linucast.net
+
+stick
+chmod o+t linuxcast.net

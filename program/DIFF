@@ -1,0 +1,18 @@
+python duple:
+a = (1,2,3)
+===================
+python list:
+a = [1,2,'3']
+
+java array:
+int[] a = {1,2,3};
+
+javascript array:
+var a = [1,2,'3'];
+var a = [1,,2]; //a[1] undefined, only in javascript
+===================
+python dictionary:
+a = {'breakfast':'bread, 'dinner':'oe'}
+
+javascript object:
+var a = {x:1,y:2};

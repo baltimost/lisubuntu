@@ -1,0 +1,16 @@
+ifconfig -a ;interface configuration
+ifconfig -eth0
+ifup eth0 ;did not work
+ifdown eth0
+ifconfig eth0 up
+ifconfig eth0 down
+
+host www.linuxcast.net
+dig www.linuxcast.net
+ip route
+traceroute www.linuxcast.net
+mtr www.linuxcast.net ; mtr stands for my traceroute
+
+hostname train.linuxcast.net
+/etc/sysconfig/network ;permanent modification
+HOSTNAME=train.linuxcast.net

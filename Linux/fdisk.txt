@@ -1,0 +1,21 @@
+PARTITION:
+fdisk -l
+fdisk /dev/sdb
+
+FILESYSTEM:
+mke2fs -t ext4 /dev/sdb1 ; t stands for type
+mkfs.ext4 /dev/sdb1
+e2label /dev/sdb1 LINUXCAST
+
+MOUNT:
+mount (-o rw/ro) /dev/sdb1 /mnt/ ; i.e. mount -o remount, ro /dev/sdb1 /mnt/
+umount /dev/sdb1 or umount /mnt/
+
+lsof /mnt/
+fuser -m /mnt/
+
+Auto Mount:
+vi /etc/fstab
+LABEL=LINUXCAST(/dev/sdb1)		/mnt		ext4	noatime,ro 0	0
+
+

@@ -1,0 +1,11 @@
+In nautilus
+ctrl+l insert directory path
+
+Terminal command
+ctrl+d exit super/back to vi
+ctrl+r search history command
+ctrl+a head
+ctrl+e tail
+ctrl+d delete
+shift+ctrl+t tab
+shift+ctrl+n new window

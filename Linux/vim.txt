@@ -1,0 +1,13 @@
+D == d$
+db ;
+% ;jump between {} ()
+dnG
+
+:s/substitutee/substituter/g
+
+ci di pi ([{"
+
+ctrl+i
+ctrl+o
+
+=a{ ; format content in {}

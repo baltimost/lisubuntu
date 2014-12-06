@@ -1,0 +1,62 @@
+stdin  0
+stdout  1
+sdterr  2
+
+Redirect:
+
+>       echo "linuxcast.net" >outfile (substitute)
+>>      ls >>outfile                  (append)
+
+2>      ls wrongcmd 2>errorout ;used for recording err info when tens of thousands of stdout pops out
+2>>
+
+2>&l    ;stdout with sdterr
+
+<       grep linuxcast </etc/passwd ;use passwd as standard in
+
+Pipline:
+commandA | commandB (|commandC)
+use commandA's stdout as commandB's stdin
+
+find / -user linuxcast | grep Video (| tar?)    
+;differentiate it with find / -user linuxcast -exec grep Video {} \;
+find / -user linuxcast 2> /dev/null | grep Video
+
+GREP
+-i ;ignore case
+-n ;line number
+-v ;invert
+
+CUT
+cut -d: -f1 /etc/passwd
+grep linuxcast /etc/passwd | cut -d: -f3
+grep linuxcast /etc/passwd | cut -c2-6   ;
+-Ax
+-Bx
+
+WC
+
+SORT
+-r  ;reverse
+-n  ;number
+-u  ;uique
+
+UNIQ
+uniq linuxcast.txt
+
+DIFF
+diff -u linuxcast linuxcast-new >final.patch
+
+ASPELL
+aspell check linuxcast
+aspell list < linuxcast
+
+TD
+tr -d 'apple' < linuxcast
+tr 'a-z''A-Z' < linuxcast
+
+SED
+sed 's/linux/unix/g' linuxcast
+sed '1,50s/linux/unix/g' linuxcasts
+sd -e 's/linux/unix/g' -e 's/nash/nash_su/g' linuxcast
+sed -f sededit linuxcast

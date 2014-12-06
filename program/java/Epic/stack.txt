@@ -1,0 +1,43 @@
+mountain point non-naive solution?
+
+palindrome Date
+
+
+step number
+median to advanced
+
+average without max3
+need simplification
+
+
+
+
+page 2 No.1
+
+snake
+
+
+AIS
+
+
+
+no. of days between two dates / no. of days between 1.1 and current
+
+
+cash register 
+greedy approach
+
+
+word search(including diagonal)
+
+#print all palindromes of size greater than equal to 3 of a given string. (DP)
+#mingo
+#cows and bulls
+#security code
+#largest snake
+#transpose strings
+#tic tac toe
+#rectangle
+#valid phone numbers
+(10-digit phone number takes too much time)
+#triangle

@@ -1,0 +1,48 @@
+1.source code 
+
+./configure
+make
+make install
+
+advantage: compatible
+disadvantage: time; dependibility
+
+2.RPM
+different op with different RPM
+
+"software name" - "version" . "OP" . "64/32"
+linuxcast-1.2.0-30.el6.i686.rpm
+
+rpm -i software.rpm
+rpm -e software ;erase
+rpm -U software-new.rpm
+
+rpm  -ivh http://www.linuxcast.net/software.rpm
+-v visual
+-h processing bar
+
+Search
+rpm -qa ;a all
+rpm -qi LinuxCast.net ;i install
+rpm -ql ;l list
+rpm -qf /usr/bin/linuxcast ;to see which softwar intrduced /usr/bin/linuxcast
+
+not installed
+rpm -qip
+rpm -qlp
+
+3.YUM(Yellowdog Updater, Modified)
+Yum, to solve the dependency problem in RPMh
+
+repo (repository)
+/etc/yum.repos.d
+
+yum install software-name
+yum remove software-name
+yum update software-name
+
+Search
+yum search vnc
+yum list (installed|recent|updates|installed)
+
+ll | wc -l

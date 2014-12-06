@@ -1,0 +1,18 @@
+Process
+1.BIOS(power on->cpu refer to FFFF0H, which is referred to BIOS)
+or EFI
+2.MBR(512B ,if 55AA,bootable;former 446B boot code,different OPs have different boot codes) is but a jump
+or GPT
+3.GRUB
+4.Kernel
+5.init(etc/inittab)
+    -0 poweroff
+    ...
+    -3
+    -5 X11
+    -6 reboot
+6.runlevel
+init 3
+init 5
+
+single user to modify ROOT passwd

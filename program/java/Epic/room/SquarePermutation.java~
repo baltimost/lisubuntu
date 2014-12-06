@@ -1,0 +1,22 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class SquarePermutation{
+
+    
+    private static List<Point> findSquareNum(int area){
+        L
+    }
+
+}
+
+
+class Point{
+    int x, y;
+    public Pair(int x, int y){ 
+        this.x = x;
+        this.y = y;
+    }
+    public int getX(){ return x;}
+    public int getY(){ return y;}
+}

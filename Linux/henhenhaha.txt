@@ -1,0 +1,15 @@
+sudo passwd
+
+sudo apt-get install vim
+sudo apt-get install rpm
+sudo apt-get install java
+
+create .vimrc
+in .vimrc input all the sets
+set tabstop=4
+
+ABOUT FULL SCREEN
+Follow the tutorial
+and install the VBGuest Addition
+
+when the Addition was installed, the scrolling problem has been solved,too
