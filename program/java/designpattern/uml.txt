@@ -1,0 +1,10 @@
+dependency
+    A uses B as an argument
+    should avoid double-way uses
+association
+    A uses B as its attribute, A and B are independent
+aggregation
+    A uses B as its attribute, A has B 
+composition
+    A uses B as its attribute, A has B, have same lifetime
+

@@ -1,0 +1,12 @@
+146	LRU Cache	14.3%	Hard
+137	Single Number II	34.1%	Medium
+
+3d dp
+87	Scramble String	23.1%	Hard
+126	Word Ladder II	11.8%	Hard
+
+91	Decode Ways	16.3%	Medium
+28	Implement strStr()	21.7%	Easy
+31	Next Permutation	25.3%	Medium
+152	Maximum Product Subarray	17.2%	Medium
+98	Validate Binary Search Tree	23.4%	Medium

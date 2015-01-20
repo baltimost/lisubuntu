@@ -6,6 +6,7 @@ class RandomListNode{
 }
 
 public class CopyListwithRandomPointer{
+    /*
     public static RandomListNode copyRandomList(RandomListNode head) {
         if(head == null)
             return null;
@@ -31,20 +32,42 @@ public class CopyListwithRandomPointer{
         }
         return dummy.next;
     }
+    */
+    public static RandomListNode copyRandomList(RandomListNode head) {
+        if(head == null) return null;
+        HashMap<RandomListNode, RandomListNode> hm = new HashMap<RandomListNode, RandomListNode>();
+        List<RandomListNode> leftover = new ArrayList<RandomListNode>();
+        RandomListNode dummy = new RandomListNode(-1);
+        RandomListNode n = dummy;
+        while(head != null){
+            n.next = new RandomListNode(head.label);
+            if(head.random != null){
+                if(hm.get(head.random) != null)
+                    n.random = hm.get(head.random);
+                else
+                    leftover.add(head);
+            }
+            hm.put(head, n.next);
+            n = n.next;
+            head = head.next;
+        }
+        for(RandomListNode x : leftover)
+            hm.get(x).random = hm.get(x.random);
+        return dummy.next;
+    }
     public static void main(String [] args){
-        int[] input = {1,2,2,2};
+        int[] input = {1,2,3,4};
         RandomListNode dummy = new RandomListNode(-1);
         RandomListNode n = dummy; 
-        RandomListNode q = null;
         for(int x: input){
-            q = new RandomListNode(x);
-            q.next = n.next;
-            n.next = q;
-            n = q;
+            n.next = new RandomListNode(x);
+            n = n.next;
         }
-        q = dummy.next;
+        RandomListNode q = dummy.next;
         while(q != null){
             System.out.print(q.label + " ");
+            if(q.random != null)
+                System.out.print("random:" + q.random.label+" ");
             q = q.next;
         }
         System.out.println();
@@ -52,6 +75,8 @@ public class CopyListwithRandomPointer{
         RandomListNode k = copyRandomList(dummy.next);
         while(k != null){
             System.out.print(k.label + " ");
+            if(k.random != null)
+                System.out.print("random:" + k.random.label+" ");
             k = k.next;
         }
         System.out.println();

@@ -41,6 +41,7 @@ public class CountandSay{
         return output;
     }
     */
+    /* Accepted code but we can merge last into the loop
     public static String countAndSay(int n){
         StringBuilder output = new StringBuilder("1");
         for(int k = 1;k < n;k++){
@@ -58,6 +59,22 @@ public class CountandSay{
             output.append(prev.charAt(i));
         }
         return output.toString();
+    }
+    */
+    public static String countAndSay(int n) {
+        String prev = "1";
+        for(int k = 1;k < n;k++){
+            StringBuilder curr = new StringBuilder();
+            for(int i = 0, j = 1;j <= prev.length();j++){
+                if(j == prev.length() || prev.charAt(j) != prev.charAt(j - 1)){
+                    curr.append(j - i);
+                    curr.append(prev.charAt(i));
+                    i = j;
+                }
+            }
+            prev = curr.toString();
+        }
+        return prev;
     }
     public static void main(String[] args){
         int n = 20;

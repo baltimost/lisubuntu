@@ -34,8 +34,25 @@ public class DecodeWays{
         return ways[len];
     }
     */
+    /*DFS Time Limited Exceeded*/
+    static int count = 0;
+
+    public static int numDecodingsAlt(String s){
+        helper(s, 0);
+        return count;
+    }
+    private static void helper(String s, int index){
+        if(index == s.length()){
+            count++;
+            return;
+        }
+        helper(s, index + 1);
+        if(index + 2 <= s.length() && Integer.parseInt(s.substring(index, index + 2)) <= 26)
+            helper(s, index + 2);
+    }
 
     public static void main(String[] args){
-        System.out.println(numDecodings("0"));
+        System.out.println(numDecodings("11111111"));
+        System.out.println(numDecodingsAlt("11111111"));
     }
 }

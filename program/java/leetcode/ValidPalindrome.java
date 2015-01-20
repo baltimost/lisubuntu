@@ -1,6 +1,5 @@
 public class ValidPalindrome{
     /*
-    */
     public static boolean isPalindrome(String s){
         if(s.equals(""))
             return true;
@@ -32,25 +31,24 @@ public class ValidPalindrome{
         }
         return true;
     }
-    /*
+    */
     public static boolean isPalindrome(String s){
-        if(s.equals(""))
-            return true;
         int i = 0;
         int j = s.length() - 1;
         while(i < j){
-            while(!Character.isLetterOrDigit(s.charAt(i)) && i < j)
+            if(!Character.isLetterOrDigit(s.charAt(i)))
                 i++;
-            while(!Character.isLetterOrDigit(s.charAt(j)) && i < j)
+            else if(!Character.isLetterOrDigit(s.charAt(j)))
                 j--;
-            if(Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j)))
+            else if(Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j)))
                 return false;
-            i++;
-            j--;
+            else{
+                i++;
+                j--;
+            }
         }
         return true;
     }
-    */
     public static void main(String[] args){
         String test = "0A man, a plan, a canal: Panama0";
         System.out.println(isPalindrome(test));

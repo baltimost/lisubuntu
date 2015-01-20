@@ -1,0 +1,20 @@
+public class Solution {
+    public String fractionToDecimal(int numerator, int denominator) {
+        StringBuilder output = new StringBuilder();
+        int intPart = numerator / denominator;
+        output.append(intPart);
+        numerator %= denominator;
+        if(numerator == 0) return output.toString();
+        
+        while(numerator != 0){
+            int fltPart = numerator * 10 / denominator;
+            if(numerator * 10 % denominator == numerator){
+                output.append("(" + fltPart + ")");
+                return output.toString();
+            }
+            numerator = numerator * 10 % denominator;
+            output.append(fltPart);
+        }
+        return output.toString();
+    }
+}

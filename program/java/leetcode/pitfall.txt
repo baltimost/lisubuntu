@@ -28,4 +28,46 @@ continue condition basically means the same thing in different expression if(!vi
 BFS
 first visit than offer including Surrounded Region
 
+Word Search
+Use char comparison rather than equals
 
+Color Sort
+l++ than i++, 'cause left have been sorted, no need to keep i
+
+Rotate Image
+offset; last should - 1
+
+Jump GameII
+step by step
+
+Valid Parenthesis
+return stack.isEmpty();
+
+Min Stack
+should also push x if x == getMin()
+
+Compare Version
+Consider the situation 1.0 vs 1
+
+Decode Ways
+should also sheck single number
+as for double number should also check the lower boundary
+
+Generate Parenthesis
+left right return condition
+
+Integer2Roman
+should list all
+
+Muliply Strings
+consider the situation when product is 0
+
+Sqrt
+should use long, and return first if x == 1
+
+SudokuII
+please return early
+
+SortList
+while(runner.next != null && runner.next.next != null) very important
+otherwise consider 8->7->null, infinite loop

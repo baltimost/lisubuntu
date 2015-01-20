@@ -22,34 +22,36 @@ public class InsertInterval{
             return intervals;
         List<Interval> output = new ArrayList<Interval>();
         int insertIndex = 0;
+        boolean added = false;
         for(Interval x: intervals){
             if(newInterval.start > x.end){
                 output.add(x);
                 insertIndex++;
             }
-            else if(newInterval.end < x.start)
+            else if(newInterval.end < x.start){
+                if(!added){
+                    output.add(newInterval);
+                    added = true;
+                }
                 output.add(x);
+            }
             else{
                 newInterval.start = Math.min(x.start, newInterval.start);
                 newInterval.end = Math.max(x.end, newInterval.end);
             }
         }
-        System.out.println("insertPos:"+insertIndex);
-        output.add(insertIndex, newInterval); 
+        //output.add(insertIndex, newInterval); 
         return output;
     }
     public static void main(String[] args){
         List<Interval> input = new ArrayList<Interval>();
-        /*
         input.add(new Interval(1,2));
-        //input.add(new Interval(3,5));
+        input.add(new Interval(3,5));
         input.add(new Interval(6,7));
         input.add(new Interval(8,10));
         input.add(new Interval(12,16));
-        */
-        input.add(new Interval(2,6));
-        //List<Interval> output = insert(input, new Interval(100,100));
-        List<Interval> output = insert(input, new Interval(3,5));
+        List<Interval> output = insert(input, new Interval(4,9));
+
         for(Interval x: output){
             System.out.println("["+x.start+","+x.end+"]");
         }

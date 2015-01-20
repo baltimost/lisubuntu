@@ -3,7 +3,7 @@ import java.util.*;
 public class MinimumWindowSubstring{
     public static String minWindow(String S, String T){
         HashMap<Character, Integer> dict = new HashMap<Character, Integer>();
-        HashMap<Character, Integer> character = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
         int leftbound = 0;
         int count = 0;
         String output = "";
@@ -14,8 +14,8 @@ public class MinimumWindowSubstring{
         for(int i = 0;i < S.length();i++){
             char cur = S.charAt(i);
             if(dict.containsKey(cur)){
-                character.put(cur, character.get(cur) == null ? 1 : character.get(cur) + 1); 
-                if(character.get(cur) <= dict.get(cur))
+                hm.put(cur, hm.get(cur) == null ? 1 : hm.get(cur) + 1); 
+                if(hm.get(cur) <= dict.get(cur))
                     count++;
                 while(count == T.length()){
                     if(output.equals("") || i - leftbound + 1 < output.length()){
@@ -23,13 +23,13 @@ public class MinimumWindowSubstring{
                         output = S.substring(leftbound, i + 1);
                     }
                     char left = S.charAt(leftbound);
-                    if(character.get(left) > dict.get(left))
-                        character.put(left, character.get(left) - 1);
+                    if(hm.get(left) > dict.get(left))
+                        hm.put(left, hm.get(left) - 1);
                     else{ 
-                        if(character.get(left) > 1)
-                            character.put(left, character.get(left) - 1);
+                        if(hm.get(left) > 1)
+                            hm.put(left, hm.get(left) - 1);
                         else
-                            character.remove(left);
+                            hm.remove(left);
                         count--;
                     }
                     leftbound++;
@@ -37,19 +37,51 @@ public class MinimumWindowSubstring{
                         leftbound++;
                 }
             }
-            else if(character.isEmpty())
+            else if(hm.isEmpty())
                 leftbound++;
 
+        }
+        return output;
+    }
+    public static String minWindowAlt(String S, String T){
+        HashMap<Character, Integer> dict = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
+        int i, j; 
+        int count = 0;
+        String output = "";
+        for(i = 0;i < T.length();i++){
+            char cur = T.charAt(i);
+            dict.put(cur, dict.get(cur) == null ? 1 : dict.get(cur) + 1); 
+        }
+        for(i = 0, j = 0;j < S.length();j++){
+            char cur = S.charAt(j);
+            if(dict.containsKey(cur)){
+                hm.put(cur, hm.get(cur) == null ? 1 : hm.get(cur) + 1); 
+                if(hm.get(cur) <= dict.get(cur))
+                    count++;
+                while(count == T.length()){
+                    if(output.equals("") || j - i + 1 < output.length())
+                        output = S.substring(i, j + 1);
+                    char left = S.charAt(i);
+                    hm.put(left, hm.get(left) - 1);
+                    if(hm.get(left) < dict.get(left))
+                        count--;
+                    i++;
+                    while(i < S.length() && !dict.containsKey(S.charAt(i))) 
+                        i++;
+                }
+            }
+            else if(hm.isEmpty())
+                i++;
         }
         return output;
     }
     public static void main(String[] args){
         String S = "aabaabaaab";
         String T = "bb";
-        /*
-        String S = "ADOBECODEBANC";
-        String T = "ABC";
-        */
+        //String S = "ADOBECODEBANC";
+        //String T = "ABC";
         System.out.println(minWindow(S, T));
+        System.out.println(minWindowAlt(S, T));
     }
 }

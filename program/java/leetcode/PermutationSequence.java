@@ -43,18 +43,40 @@ public class PermutationSequence{
             k %= factorial;
             if(n - i - 1 > 0)
                 factorial /= (n - i - 1);
-            System.out.println(index);
             output.append(num.get(index));
-            System.out.println(output.toString());
             num.remove(index);
         }
         return output.toString();
     }
+    public static String getPermutationAlt(int n, int k){
+        StringBuilder output = new StringBuilder();
+        List<Integer> num = new ArrayList<Integer>();
+        k--;
+        for(int i = 1;i <= n;i++)
+            num.add(i);
+        int factorial = getFactorial(n - 1);
+        for(int i = n - 1;i >= 0;i--){
+            int index = k / factorial;
+            k %= factorial;
+            if(i > 0)
+                factorial /= i;
+            output.append(num.get(index));
+            num.remove(index);
+        }
+        System.out.println("num:" + num.size());
+        return output.toString();
+    }
+    private static int getFactorial(int n){
+        int output = 1;
+        for(int i = 1;i <= n;i++)
+            output *= i;
+        return output;
+    }
     public static void main(String[] args){
         long start = System.currentTimeMillis();
-        String output = getPermutation(1, 1);
-        System.out.println(output);
+        System.out.println(getPermutation(3, 6));
+        System.out.println(getPermutationAlt(3, 6));
         long interval = System.currentTimeMillis() - start;
-        System.out.println(interval);
+        //System.out.println(interval);
     }
 }

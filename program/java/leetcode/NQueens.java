@@ -93,7 +93,7 @@ public class NQueens{
         return true;
     }
     public static void main(String[] args){
-        List<String[]> output = solveNQueens(8);
+        List<String[]> output = solveNQueens(4);
         System.out.println("=====");
         int count = 0;
         for(String[] x: output){

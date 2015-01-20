@@ -38,21 +38,17 @@ public class IntegertoRoman{
     public static String intToRoman(int num){
         int[] arabic = {1000,900,500,400,100,90,50,40,10,9,5,4,1}; 
         String[] roman = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
-        String output = "";
+        StringBuilder output = new StringBuilder(); 
         for(int i = 0;i < arabic.length;i++){
             int count = num / arabic[i];
-            num -= count * arabic[i];
+            num %= arabic[i];
             for(int j = 0;j < count;j++)
-                output += roman[i];
+                output.append(roman[i]);
         }
-        return output;
+        return output.toString();
     }
     public static void main(String[] args){
-        System.out.println(intToRoman(3999));
-        System.out.println(intToRoman(3899));
-        System.out.println(intToRoman(3499));
-        System.out.println(intToRoman(1));
-        System.out.println(intToRoman(11));
-        System.out.println(intToRoman(9));
+        System.out.println(args.length);
+        System.out.println(intToRoman(Integer.parseInt(args[0])));
     }
 }

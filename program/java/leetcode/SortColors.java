@@ -23,8 +23,8 @@ public class SortColors{
         a[j] = tmp;
     }
     public static void main(String[] args){
-        int[] input = {1,2,0};
-        //int[] input = {0,1,0,0,1,2,0,1};
+        //int[] input = {1,2,0};
+        int[] input = {0,1,0,0,1,2,0,1};
         sortColors(input);
         for(int x: input)
             System.out.print(x + " ");

@@ -14,6 +14,7 @@ public class LetterCombinationsofaPhoneNumber{
            int start,
            StringBuilder entry,
            List<String> output){
+        /*
         if(entry.length() == digits.length()){
             output.add(entry.toString());
             return;
@@ -26,10 +27,30 @@ public class LetterCombinationsofaPhoneNumber{
                 entry.deleteCharAt(entry.length() - 1);
             }
         }
+        */
+        /**/
+        // Three Times faster than above, 'Cause above generates redundant entries, 
+        // if I input "234", it may skip 3
+        if(start == digits.length()){
+            output.add(entry.toString());
+            return;
+        }
+        int index = digits.charAt(start) - '0';
+        for(int j = 0;j < letters[index].length();j++){
+            entry.append(letters[index].charAt(j));
+            helper(letters, digits, start + 1, entry, output);
+            entry.deleteCharAt(entry.length() - 1);
+        }
+        /**/
     } 
     public static void main(String[] args){
+        long start = System.currentTimeMillis();
         List<String> output = letterCombinations("234");
+        long end = System.currentTimeMillis();
+        System.out.println(end - start);
+        /*
         for(String x: output)
             System.out.println("**"+x+"**");
+            */
     }
 }

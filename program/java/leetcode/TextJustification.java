@@ -58,7 +58,7 @@ public class TextJustification{
         //String[] words = {""};
         //String[] words = {"Hello,", "my", "name", "is", "Zhuren", "Zhou.", "How","are","you","doing?"};
         String[] words = {"a", "b", "c", "d", "e"};
-        List<String> rst = fullJustify(words, 1); 
+        List<String> rst = fullJustify(words, 3); 
         System.out.println("start");
         for(String x: rst)
             System.out.println("**"+x+"**");

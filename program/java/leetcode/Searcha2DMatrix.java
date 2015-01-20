@@ -24,9 +24,31 @@ public class Searcha2DMatrix{
         }
         return high;//within a range, in regular binarySearch it should return 0 if target not found
     }
+public static boolean searchMatrixAlt(int[][] matrix, int target) {
+        if(matrix == null || matrix.length == 0 || matrix[0].length == 0)
+            return false;
+        int row = matrix.length;
+        int col = matrix[0].length;
+        int l = 0;
+        int h = col * row - 1;
+        while(l <= h){
+            int m = (l + h) / 2;
+            int x = m / col;
+            int y = m % col;
+            System.out.println(matrix[x][y]);
+            if(matrix[x][y] < target)
+                l = m + 1;
+            else if(matrix[x][y] > target)
+                h = m - 1;
+            else
+                return true;
+        }
+        return false;
+    }
     public static void main(String[] args){
         //int[][] matrix = {{1,3,5,7},{10,11,16,20},{23,30,34,50}};
         int[][] matrix = {{1,3}};
         System.out.println(searchMatrix(matrix,3));
+        System.out.println(searchMatrixAlt(matrix,3));
     }
 }

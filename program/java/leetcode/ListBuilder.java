@@ -1,6 +1,21 @@
 public class ListBuilder{
     //int[] input = {60,71,49,11,82,49,3,66};
-    public ListNode create(int[] input){
+    public static void print(ListNode head){
+        while(head != null){
+            System.out.print(head.val + " ");
+            head = head.next;
+        }
+        System.out.println();
+    }
+    public static ListNode create(int[] input){
+        ListNode dummy = new ListNode(-1);
+        ListNode n = dummy;
+        for(int x : input){
+            n.next = new ListNode(x);
+            n = n.next;
+        }
+        return dummy.next;
+        /*
         ListNode h, p, t;
         h = new ListNode(0);
         t = h;
@@ -10,7 +25,7 @@ public class ListBuilder{
             t = p;
         }
         return h.next;
-
+        */
     }
 
     public static void main(String[] args){
@@ -27,6 +42,7 @@ public class ListBuilder{
 
 /*Reverse a Linked List
         */
+        /*
         ReverseLinkedListII rll = new ReverseLinkedListII();
         p = rll.reverseBetween(h, 2, 5);
         while(p != null){
@@ -34,6 +50,7 @@ public class ListBuilder{
             p = p.next;
         }
         System.out.println();
+        */
 
        /*Quick Sort 
         SortList sl = new SortList();

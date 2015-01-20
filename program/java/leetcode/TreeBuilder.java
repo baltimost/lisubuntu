@@ -1,32 +1,25 @@
 import java.util.*;
 
 public class TreeBuilder{
-    int i = 0;
     //char[] input = {'A','B','C',' ',' ','D','E',' ','G',' ',' ','F',' ',' ',' '}; 
-    //public TreeNode createBinaryTree(char[] input){
-    int[] input;
-    public TreeNode createBinaryTree(int[] input){
-        this.input = input;
-        i = 0;
-        return create();
-    }
-    private TreeNode create(){
+    //public TreeNode create(char[] input){
+    static int[] input;
+    static int i = 0;
+    public static TreeNode create(int[] input){
         if(input[i] == ' '){
             i++;
             return null;
         }
-        else{
-            TreeNode node = new TreeNode(input[i]);
-            i++;
-            node.left = create();
-            node.right = create();
-            return node;
-        }
+        TreeNode root = new TreeNode(input[i]);
+        i++;
+        root.left = create(input);
+        root.right = create(input);
+        return root;
     }
     public static void main(String[] args){
         TreeBuilder tb = new TreeBuilder();
         int[] commonArr = {1,2,4,' ',' ',5,' ',' ',3,6,' ',' ',7,' ',' '}; 
-        TreeNode commonRoot =  tb.createBinaryTree(commonArr);
+        TreeNode commonRoot =  tb.create(commonArr);
         /*Populating*/
         /*
         int[] input1 = {'A','B','C',' ',' ','D','E',' ','G',' ',' ','F',' ',' ',' '}; 
@@ -34,7 +27,7 @@ public class TreeBuilder{
         int[] populating = {'1','2','4',' ',' ','5',' ',' ','3','6',' ',' ','7',' ',' '}; 
         //int[] populatingII = {1,2,4,' ',' ',5,' ',' ',3,' ',7,' ',' '}; 
         int[] populatingII = {1,2,3,' ',' ',' ',4,' ',5,' ',6,' ',' '}; 
-        TreeNode root =  tb.createBinaryTree(populatingII);
+        TreeNode root =  tb.create(populatingII);
         PopulatingNextRightPointersinEachNodeII.connect(root);
         TreeNode h = root;
         //System.out.println((char)h.val);
@@ -81,7 +74,7 @@ public class TreeBuilder{
             System.out.println();
         }
         /* IsSameTree?
-        TreeNode root2 =  tb.createBinaryTree(input2);
+        TreeNode root2 =  tb.create(input2);
         System.out.println(SameTree.isSameTree(root,root2));
         */
         /*BalancedBinaryTree*/
@@ -89,7 +82,7 @@ public class TreeBuilder{
         //char[] input1 = {'A','B','C',' ',' ',' ','D',' ','E',' ',' '};
         /*
         char[] input1 = {'1',' ','2',' ','3',' ',' '}; 
-        TreeNode root = tb.createBinaryTree(input1);
+        TreeNode root = tb.create(input1);
         System.out.println(BalancedBinaryTree.isBalanced(root));
         */
         /*BalancedBinaryTree*/
@@ -98,7 +91,7 @@ public class TreeBuilder{
         /*
         //char[] input1 = {'4','2','1',' ',' ','3',' ',' ','5','6',' ',' ','8','7',' ',' ','9',' ',' '};
         int[] input1 = {1, 2,4,' ', ' ',5,' ',' ',3,' ',' '};
-        TreeNode root = tb.createBinaryTree(input1);
+        TreeNode root = tb.create(input1);
         ArrayList<Integer> output = BinaryTreeInorderTraversal.inorderTraversal(root); 
         for(Integer x:output){
             int tmp = x.intValue();
@@ -123,7 +116,7 @@ public class TreeBuilder{
         /*
         int[] input = {5,4,11,7,' ',' ',2,' ',' ',' ', 8,13,' ',' ',4,5,' ',' ',1,' ',' '};
         //int[] input = {5,4,' ',' ',8,' ',' '};
-        TreeNode root = tb.createBinaryTree(input);
+        TreeNode root = tb.create(input);
         List<Integer> output1 = BinaryTreePreorderTraversal.preorderTraversal(root); 
         for(Integer x: output1)
             System.out.print(x + " ");
@@ -140,7 +133,7 @@ public class TreeBuilder{
         //Flatten
         /*
         int[] input = {1,2,3,' ',' ',4,' ',' ',5,' ',6,' ',' '};
-        TreeNode root = tb.createBinaryTree(input);
+        TreeNode root = tb.create(input);
         FlattenBinaryTreetoLinkedList.flatten(root);
         System.out.println("=======");
         while(root != null){
@@ -156,7 +149,7 @@ public class TreeBuilder{
         //int[] input = {1,2,' ',' ',3,' ',' '}; 
         //int[] input = {1,' ',' '};
 
-        TreeNode root = tb.createBinaryTree(input);
+        TreeNode root = tb.create(input);
         List<Integer> output = BinaryTreePreorderTraversal.preorderTraversal(root); 
         for(Integer x: output)
             System.out.print(x + " ");
@@ -171,7 +164,7 @@ public class TreeBuilder{
         int[] input = {20,10,5,3,' ',' ',7,' ',' ',15,' ',20,' ',' ',30,' ',' '};
         //int[] input = {2,2,' ',' ',' '};
         //int[] input = {2,' ',2,' ',' '};
-        TreeNode root = tb.createBinaryTree(input);
+        TreeNode root = tb.create(input);
         System.out.println(ValidateBinarySearchTree.isBinarySearchTree(root));
         */
         //Validate BinarySearchTree
@@ -181,7 +174,7 @@ public class TreeBuilder{
         int[] input = {0,1,' ',' ',3,' ',' '};
         //int[] input = {0,1,' ',' ',' '};
         //int[] input = {1,2,' ',' ',3,' ',' '};
-        TreeNode root = tb.createBinaryTree(input);
+        TreeNode root = tb.create(input);
         SumRoottoLeafNumbers srln = new SumRoottoLeafNumbers();
         System.out.println(srln.sumNumbers(root));
         */

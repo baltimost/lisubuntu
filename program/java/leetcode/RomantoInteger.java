@@ -43,11 +43,12 @@ public class RomantoInteger{
         hm.put('C', 100);
         hm.put('D', 500);
         hm.put('M', 1000);
-        int output = hm.get(s.charAt(0));
-        for(int i = 1;i < s.length();i++){
-            if(hm.get(s.charAt(i)) > hm.get(s.charAt(i - 1)))
-                output -= 2 * hm.get(s.charAt(i - 1));
-            output += hm.get(s.charAt(i));
+        int output = 0; 
+        for(int i = 0;i < s.length();i++){
+            if(i + 1 == s.length() || hm.get(s.charAt(i + 1)) <= hm.get(s.charAt(i)))
+                output += hm.get(s.charAt(i));
+            else
+                output -= hm.get(s.charAt(i));
         }
         return output;
     }

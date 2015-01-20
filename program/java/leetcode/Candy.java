@@ -19,9 +19,10 @@ public class Candy{
         return output;
     }
     public static void main(String[] args){
-        int[] test = {4,2,3,4,1};
-        //int[] test = {7,4,3,2,8,6,0,1};
+        //int[] test = {4,2,3,4,1};
+        int[] test = {7,4,3,2,8,6,0,1};
         //int[] test = {2,2};
+        //int[] test = {2,1,4,7,4,8,3,6,4,3,2,1};
         System.out.println(candy(test));
     }
 }

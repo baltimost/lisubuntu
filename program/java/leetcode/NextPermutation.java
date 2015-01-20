@@ -2,7 +2,6 @@ public class NextPermutation{
     public static void nextPermutation(int[] num){
         int i;
         for(i = num.length - 2;i >= 0 && num[i] > num[i + 1];i--);
-        System.out.println("i="+i);
         if(i != -1){
             int j = i + 1;
             for(;j < num.length && num[j] > num[i];j++);
@@ -27,7 +26,8 @@ public class NextPermutation{
 
     public static void main(String[] args){
         //int[] input = {1, 2, 3};
-        int[] input = {2,3,6,5,4,1};
+        //int[] input = {2,3,6,5,4,1};
+        int[] input = {2,3,6,5,1};
         nextPermutation(input);
         for(int x: input)
             System.out.print(x + " ");

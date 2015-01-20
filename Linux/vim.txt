@@ -3,7 +3,8 @@ db ;
 % ;jump between {} ()
 dnG
 
-:s/substitutee/substituter/g
+:s/substitutee/substituter/g (the current line)
+:%s/substitutee/substituter/g (the whole page)
 
 ci di pi ([{"
 

@@ -1,4 +1,4 @@
-mport java.util.*;
+import java.util.*;
 
 public class Anagrams{
     public static List<String> anagrams(String[] strs){
@@ -29,8 +29,8 @@ public class Anagrams{
         return output;
     }
     public static void main(String[] args){
-        //String[] strs = {"iceman", "nicema", "more", "mero", "cars"};
-        String[] strs = {};
+        String[] strs = {"iceman", "nicema", "more", "mero", "cars"};
+        //String[] strs = {};
         List<String> rst = new ArrayList<String>();
         rst = anagrams(strs);
         for(String x: rst)

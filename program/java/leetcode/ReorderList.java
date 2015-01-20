@@ -49,17 +49,7 @@ public class ReorderList{
         walker.next = null;
 
         ListNode k = left;
-        while(k != null){
-            System.out.print(k.val + " ");
-            k = k.next;
-        }
-        System.out.println();
         k = right;
-        while(k != null){
-            System.out.print(k.val + " ");
-            k = k.next;
-        }
-        System.out.println();
         
         //merge two parts
         while(right != null){
@@ -69,5 +59,11 @@ public class ReorderList{
             left = right.next;
             right = tmp;
         }
+    }
+    public static void main(String[] args){
+        int[] arr = {1,2,3,4,5};
+        ListNode head = ListBuilder.create(arr);
+        reorderList(head);
+        ListBuilder.print(head);
     }
 }

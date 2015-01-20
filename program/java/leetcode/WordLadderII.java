@@ -27,8 +27,8 @@ public class WordLadderII{
                     return;
                 }
                 if(dict.contains(tmp)){
-                    //if(output.size() != 0 && entry.size() + 1 >= output.get(0).size())
-                     //   return;
+                    if(output.size() != 0 && entry.size() + 1 >= output.get(0).size())
+                        return;
                     entry.add(tmp);
                     dict.remove(tmp);
                     helper(tmp, end, dict, entry, output);
@@ -46,6 +46,7 @@ public class WordLadderII{
             dict.add(x);
         //List<List<String>> output = findLadders("cet", "ism", dict); 
         List<List<String>> output = findLadders("hit", "cog", dict); 
+        System.out.println("---");
         for(List<String> x: output){
             for(String y: x)
                 System.out.print(y + " ");

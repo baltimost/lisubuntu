@@ -31,6 +31,10 @@ public class WordLadder{
         }
         return 0;
     }
+    public static void main(String[] args){
+        Set<String> dict = new HashSet<String>();
+        System.out.println(ladderLength("mape","mape",dict));
+    }
     /*TLE
     public static boolean isNeighbor(String x, String y){
         int count = 0;
@@ -43,8 +47,4 @@ public class WordLadder{
         return true;
     } 
     */
-    public static void main(String[] args){
-        Set<String> dict = new HashSet<String>();
-        System.out.println(ladderLength("mape","mape",dict));
-    }
 }

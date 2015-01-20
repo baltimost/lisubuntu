@@ -9,7 +9,8 @@ public class DivideTwoIntegers{
         long b = Math.abs((long)divisor);
         int output = 0;
         while(a >= b){
-            int shift = 0;
+            int shift = 1;
+            //int shift = 0;
             while(a >= b << shift){
                 shift++;
             }
@@ -19,6 +20,6 @@ public class DivideTwoIntegers{
         return output * sign;
     }
     public static void main(String[] args){
-        System.out.println(divide(2,0));
+        System.out.println(divide(6,5));
     }
 }

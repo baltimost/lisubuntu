@@ -4,7 +4,8 @@ public class ArrayMergeSort{
     public static int[] mergeSort(int[] arr){
         int[] tmp = new int[arr.length];
         int flag = 0;
-        for(int sublen = 1;sublen <= arr.length;sublen *= 2){
+        //for(int sublen = 1;sublen <= arr.length;sublen *= 2){
+        for(int sublen = 1;sublen < arr.length;sublen *= 2){
             if(flag % 2 == 0)
                 sort(arr, tmp, sublen);
             else
@@ -24,9 +25,7 @@ public class ArrayMergeSort{
         }
     }
     public static void merge(int[] arr, int[] tmp, int h, int m, int t){
-        int k = h;
-        int i = h;
-        int j = m;
+        int k = h, i = h, j = m;
         while(i < m && j < t){
             tmp[k++] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
         }
@@ -38,7 +37,7 @@ public class ArrayMergeSort{
                 tmp[k++] = arr[i++];
     } 
     public static void main(String[] args){
-        int[] test = {60,71,49,11,82,49,3,66,65};
+        int[] test = {60,71,49,11,82,49,3,66,65,-4};
         int[] output = mergeSort(test);
         for(int x: output)
             System.out.print(x + " ");

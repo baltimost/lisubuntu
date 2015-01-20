@@ -1,0 +1,11 @@
+
+28	Implement strStr()	21.7%	Easy KMP?
+
+10	Regular Expression Matching	20.4%	Hard
+44	Wildcard Matching	14.6%	Hard
+
+87	Scramble String	23.0%	Hard
+
+30	Substring with Concatenation of All Words	18.2%	Hard
+126	Word Ladder II	11.8%	Hard
+
