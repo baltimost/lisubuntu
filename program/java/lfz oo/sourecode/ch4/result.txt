@@ -1,0 +1,6 @@
+Show me: StaticInner
+Show me: InstanceInner
+同名变量的访问方法测试:
+varTest in InstanceInner(): 10
+varTest in Inner class: 5
+varTest in outer class: 0

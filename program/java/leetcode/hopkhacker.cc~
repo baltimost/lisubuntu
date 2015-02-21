@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int divide(int dividend, int divisor) {
+        long long divid = dividend, divis = divisor;
+        long long res = 0;
+
+        if (divis < 0) divis = -divis, divid = -divid;
+        bool minus = false;
+        if (divid < 0) minus = true, divid = - divid;
+        while(divid >= divis){
+            long long a = 1, b = divis;
+            while(divid >= (b << 1)){
+                a <<= 1;
+                b <<= 1;
+            }
+            divid -= b;
+            res += a;
+        }
+        if (minus) return -res;
+        else return res;
+    }
+};
+int main ( int argc, char *argv[] ) {
+    cout << Solution().divide(-2147483648, 1) << endl;
+    return EXIT_SUCCESS;
+}

@@ -71,3 +71,17 @@ please return early
 SortList
 while(runner.next != null && runner.next.next != null) very important
 otherwise consider 8->7->null, infinite loop
+
+two sum
+consider whether index or value, whether repeat or not
+if(hm.containsKey(arr[i])) continue;
+
+Valid palindrome
+last else
+
+Palindrome partition II
+d[i] = Integer.MAX_VALUE;
+
+Longest Palindromic
+no need 2 pass
+

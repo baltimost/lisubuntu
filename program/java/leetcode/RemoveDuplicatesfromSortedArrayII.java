@@ -13,7 +13,7 @@ public class RemoveDuplicatesfromSortedArrayII{
             else{
                 count++;
                 if(count == 1){
-                    A[i] = A[i - 1];
+                    //A[i] = A[i - 1];
                     i++;
                 }
             }
@@ -21,7 +21,8 @@ public class RemoveDuplicatesfromSortedArrayII{
         return i; 
     }
     public static void main(String[] args){
-        int[] test = {1,1,1,2,2,3};
+        //int[] test = {1,1,1,2,2,3};
+        int[] test = {1,1,1,1,3,3};
         int len = removeDuplicates(test);
         for(int i = 0;i < len;i++)
             System.out.print(test[i] + " ");

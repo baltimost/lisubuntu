@@ -1,0 +1,55 @@
+1: //: FileIODemo.java
+2: 
+3: //package g3ds.joop.ch7;
+4: 
+5: import java.io.*;
+6: 
+7: public class FileIODemo{
+8: 	private String strTemp;
+9: 	private String  strFinal=new String();
+10: 	
+11: 	//测试
+12: 	public static void main(String[] args) throws IOException{
+13: 		FileIODemo obj = new FileIODemo();
+14: 		
+15: 		//打开一个文件FileIODemo.java
+16: 		obj.open("FileIODemo.java");
+17: 		//把它另存为FileIODemo.txt，并加上行号
+18: 		obj.saveAs("FileIODemo.txt");
+19: 	}
+20: 	
+21: 	public void open(String fileName){
+22: 		try{
+23: 			//把文件内容读入缓存
+24: 			BufferedReader in = new BufferedReader(
+25: 				new FileReader(fileName));
+26: 		
+27: 			while((strTemp = in.readLine())!= null)
+28: 				strFinal += strTemp + "\n";
+29: 			
+30: 			//关闭文件
+31: 			in.close();
+32: 		}catch(IOException e){}
+33: 	}
+34: 	
+35: 	public void saveAs(String fileName){
+36: 		try {
+37:       		//读入缓存中文件的内容
+38:       		BufferedReader in = new BufferedReader(
+39: 				new StringReader(strFinal));
+40: 			
+41: 			//定义写出的文件名
+42: 			PrintWriter out = new PrintWriter(
+43: 				new BufferedWriter(new FileWriter(fileName)));
+44:             
+45:             //写过程
+46: 			int lineCount = 1;
+47: 			while((strTemp = in.readLine()) != null )
+48: 				out.println(lineCount++ + ": " + strTemp);
+49: 			
+50: 			//关闭文件
+51: 			in.close();	
+52: 			out.close();
+53: 		} catch(IOException e) {}
+54: 	}
+55: }

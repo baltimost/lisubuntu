@@ -1,0 +1,145 @@
+104	Maximum Depth of Binary Tree	44.6%	Easy
+6	ZigZag Conversion	22.7%	Easy
+110	Balanced Binary Tree	32.1%	Easy
+102	Binary Tree Level Order Traversal	29.9%	Easy
+107	Binary Tree Level Order Traversal II	30.5%	Easy
+70	Climbing Stairs	34.1%	Easy
+165	Compare Version Numbers	14.9%	Easy
+38	Count and Say	25.8%	Easy
+
+20	Valid Parentheses	27.5%	Easy
+171	Excel Sheet Column Number	38.3%	Easy
+168	Excel Sheet Column Title	17.4%	Easy
+172	Factorial Trailing Zeroes	28.1%	Easy
+28	Implement strStr()	21.8%	Easy
+160	Intersection of Two Linked Lists	27.3%	Easy
+58	Length of Last Word	28.8%	Easy
+14	Longest Common Prefix	26.5%	Easy
+
+67	Add Binary	25.1%	Easy
+88	Merge Sorted Array	30.5%	Easy
+101	Symmetric Tree	31.3%	Easy
+21	Merge Two Sorted Lists	33.2%	Easy
+155	Min Stack	15.4%	Easy
+111	Minimum Depth of Binary Tree	29.2%	Easy
+9	Palindrome Number	29.1%	Easy
+118	Pascal's Triangle	30.7%	Easy
+119	Pascal's Triangle II	29.8%	Easy
+112	Path Sum	30.1%	Easy
+8	String to Integer (atoi)	13.7%	Easy
+66	Plus One	31.1%	Easy
+27	Remove Element	32.4%	Easy
+19	Remove Nth Node From End of List	28.5%	Easy
+7	Reverse Integer	31.1%	Easy
+100	Same Tree	42.1%	Easy
+169	Majority Element	34.1%	Easy
+
+
+146	LRU Cache	14.4%	Hard
+
+
+79	Word Search	19.8%	Medium
+162	Find Peak Element	32.0%	Medium
+2	Add Two Numbers	22.7%	Medium
+114	Flatten Binary Tree to Linked List	28.4%	Medium
+166	Fraction to Recurring Decimal	12.0%	Medium
+134	Gas Station	25.8%	Medium
+22	Generate Parentheses	32.1%	Medium
+89	Gray Code	32.4%	Medium
+95	Unique Binary Search Trees II	27.4%	Medium
+49	Anagrams	24.0%	Medium
+147	Insertion Sort List	25.8%	Medium
+
+
+96	Unique Binary Search Trees	37.0%	Medium
+55	Jump Game	27.1%	Medium
+179	Largest Number	14.7%	Medium
+103	Binary Tree Zigzag Level Order Traversal	26.5%	Medium
+17	Letter Combinations of a Phone Number	26.6%	Medium
+141	Linked List Cycle	36.1%	Medium
+142	Linked List Cycle II	31.0%	Medium
+
+
+139	Word Break	21.9%	Medium
+3	Longest Substring Without Repeating Characters	22.0%	Medium
+133	Clone Graph	23.5%	Medium
+39	Combination Sum	27.3%	Medium
+120	Triangle	26.9%	Medium
+40	Combination Sum II	24.8%	Medium
+77	Combinations	30.4%	Medium
+121	Best Time to Buy and Sell Stock	31.9%	Medium
+106	Construct Binary Tree from Inorder and Postorder Traversal	26.6%	Medium
+
+105	Construct Binary Tree from Preorder and Inorder Traversal	26.5%	Medium
+11	Container With Most Water	31.6%	Medium
+108	Convert Sorted Array to Binary Search Tree	33.5%	Medium
+109	Convert Sorted List to Binary Search Tree	27.5%	Medium
+24	Swap Nodes in Pairs	32.5%	Medium
+130	Surrounded Regions	14.4%	Medium
+129	Sum Root to Leaf Numbers	30.2%	Medium
+64	Minimum Path Sum	31.6%	Medium
+34	Search for a Range	27.6%	Medium
+43	Multiply Strings	20.7%	Medium
+122	Best Time to Buy and Sell Stock II	37.2%	Medium
+98	Validate Binary Search Tree	22.7%	Medium
+
+eaduuuode Ways	16.3%	Medium
+
+86	Partition List	27.2%	Medium
+
+90	Subsets II	27.3%	Medium
+78	Subsets	28.1%	Medium
+113	Path Sum II	26.8%	Medium
+
+173	Binary Search Tree Iterator	28.7%	Medium
+69	Sqrt(x)	22.7%	Medium
+116	Populating Next Right Pointers in Each Node	35.7%	Medium
+
+50	Pow(x, n)	26.5%	Medium
+59	Spiral Matrix II	31.2%	Medium
+
+127	Word Ladder	18.7%	Medium
+54	Spiral Matrix	20.8%	Medium
+148	Sort List	21.1%	Medium
+
+
+126	Word Ladder II	12.0%	Hard
+76	Minimum Window Substring	18.3%	Hard
+87	Scramble String	23.4%	Hard
+25	Reverse Nodes in k-Group	25.2%	Hard
+10	Regular Expression Matching	20.6%	Hard
+99	Recover Binary Search Tree	24.1%	Hard
+117	Populating Next Right Pointers in Each Node II	31.2%	Hard
+
+30	Substring with Concatenation of All Words	18.6%	Hard
+
+52	N-Queens II	34.7%	Hard
+51	N-Queens	26.0%	Hard
+68	Text Justification	14.2%	Hard
+56	Merge Intervals	21.5%	Hard
+4	Median of Two Sorted Arrays	17.7%	Hard
+164	Maximum Gap	24.1%	Hard
+42	Trapping Rain Water	29.6%	Hard
+85	Maximal Rectangle	21.6%	Hard
+149	Max Points on a Line	11.7%	Hard
+33	Search in Rotated Sorted Array	28.8%	Hard
+32	Longest Valid Parentheses	20.2%	Hard
+128	Longest Consecutive Sequence	28.8%	Hard
+84	Largest Rectangle in Histogram	22.1%	Hard
+45	Jump Game II	24.7%	Hard
+97	Interleaving String	20.1%	Hard
+57	Insert Interval	20.9%	Hard
+
+
+65	Valid Number	11.3%	Hard
+72	Edit Distance	25.8%	Hard
+174	Dungeon Game	16.4%	Hard
+115	Distinct Subsequences	25.4%	Hard
+138	Copy List with Random Pointer	24.1%	Hard
+44	Wildcard Matching	14.7%	Hard
+135	Candy	19.8%	Hard
+
+124	Binary Tree Maximum Path Sum	20.8%	Hard
+140	Word Break II	17.0%	Hard
+123	Best Time to Buy and Sell Stock III	22.9%	Hard
+

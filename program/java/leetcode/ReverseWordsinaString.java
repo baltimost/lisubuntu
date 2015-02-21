@@ -50,7 +50,8 @@ public class ReverseWordsinaString{
 //        String test = "hwf akgsvxoum.srls!q?kzn,eobptjwuzprb?pcvgzf wbf,aaouridwjwtsc'niveqfkpozoobgi";
         //String test ="  To be   continued";
         //String test ="To be   continued";
-        String test ="c";
+        //String test ="c";
+        String test = " ";
         System.out.println(test);
         System.out.println("**" + reverseWords(test) + "**");
     }

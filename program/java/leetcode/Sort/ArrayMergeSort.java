@@ -37,7 +37,8 @@ public class ArrayMergeSort{
                 tmp[k++] = arr[i++];
     } 
     public static void main(String[] args){
-        int[] test = {60,71,49,11,82,49,3,66,65,-4};
+        //int[] test = {60,71,49,11,82,49,3,66,65,-4};
+        int[] test = {3,2,4,1,5,6,8,7,4};
         int[] output = mergeSort(test);
         for(int x: output)
             System.out.print(x + " ");

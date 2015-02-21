@@ -3,21 +3,22 @@ public class FindMinimuminRotatedSortedArray{
         int l = 0;
         int h = num.length - 1;
         int m = (l + h) / 2;
-        while(h - l > 1){
-            m = (l + h) / 2;
-            /*
-            if(num[m] >= num[l] && num[m] <= num[h])
+        //while(h - l > 1){
+        while(l < h){
+            if(num[l] < num[h])
                 return num[l];
-            else*/ if(num[m] >= num[l])
-                l = m; 
+            m = (l + h) / 2;
+            if(num[m] >= num[l])
+                l = m + 1; 
             else
                 h = m;
         }
-        return Math.min(num[l], num[h]); 
+        //return Math.min(num[l], num[h]); 
+        return num[l];
     }
     public static void main(String[] args){
-        int[] arr = {4,5,6,7,0,1,3};
-        //int[] arr = {7,8,9,10,2,3,4,5,6};
+        //int[] arr = {4,5,6,7,0,1,3};
+        int[] arr = {7,8,9,10,2,3,4,5,6};
         System.out.println(findMin(arr));
     }
 }

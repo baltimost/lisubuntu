@@ -50,8 +50,8 @@ public class ThreeSum{
                     output.add(entry);
                     i++;
                     j--;
-                    while(num[i] == num[i - 1]) i++;
-                    while(num[j] == num[j + 1]) j--;
+                    while(i < j && num[i] == num[i - 1]) i++;
+                    while(i < j && num[j] == num[j + 1]) j--;
                 } 
                 else if(sum < 0){
                     i++;
@@ -64,7 +64,8 @@ public class ThreeSum{
         return output;
     }
     public static void main(String[] args){
-        int[] input = {-2,0,0,2,2};
+        //int[] input = {-2,0,0,2,2};
+        int[] input = {0,0,0};
         //int[] input = {-1,0,1,2,-1,-4};
         //int[] input = {1,7,5,5,-2,1,7,9,4,-8,3,-8,-6,-10,3,3,9,-1,-1,-5,9,-5,-6,-9,3,-7,7,20,19,18,17,16};
         long before = System.currentTimeMillis();

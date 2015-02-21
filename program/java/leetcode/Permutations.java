@@ -4,11 +4,13 @@ public class Permutations{
     public static List<List<Integer>> permute(int[] num){
         List<List<Integer>> output = new ArrayList<List<Integer>>();
         List<Integer> entry = new ArrayList<Integer>();
-        helper(num, entry, output);
+        boolean[] visited = new boolean[num.length];
+        helper(num, visited,  entry, output);
         return output;
     }
     public static void helper(
             int[] num,
+            boolean[] visited,
             List<Integer> entry,
             List<List<Integer>> output
             ){
@@ -17,11 +19,13 @@ public class Permutations{
             return;
         }
         for(int i = 0;i < num.length;i++){
-            if(entry.contains(num[i]))
+            if(visited[i])
                 continue;
             entry.add(num[i]);
-            helper(num, entry, output);
+            visited[i] = true;
+            helper(num, visited, entry, output);
             entry.remove(entry.size() - 1);
+            visited[i] = false;
         }
     }
     public static void main(String[] args){

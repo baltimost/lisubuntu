@@ -1,0 +1,5 @@
+文件名: 	FileInfo.java
+绝对路径: 	E:\joop-new\ch7\code\FileInfo.java
+File exists.
+and is Readable and is Writeable.
+File is 923 bytes.

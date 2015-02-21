@@ -47,7 +47,8 @@ public class RemoveDuplicatesfromSortedArray{
     }
     public static void main(String[] args){
         int[] test = {1,1,2,3,4,8,9,9,9,10,10,11,12,39,39,39,39,40,40,40};
-        int len = removeDuplicates(test);
+        //int len = removeDuplicates(test);
+        int len = removeDuplicatesII(test);
         for(int i = 0;i < len;i++)
             System.out.print(test[i] + " ");
         System.out.println();

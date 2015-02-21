@@ -33,8 +33,9 @@ public class FourSum{
         return output;
     }
     public static void main(String[] args){
-        int[] input = {1,0,-1,0,-2,2};
-        List<List<Integer>> output = fourSum(input, 0);
+        //int[] arr = {1,0,-1,0,-2,2};
+        int[] arr = {5,2,4,6,7,1,2,11,6};
+        List<List<Integer>> output = fourSum(arr, 17);
         for(List<Integer> x: output){
             for(Integer y: x)
                 System.out.print(y + " ");

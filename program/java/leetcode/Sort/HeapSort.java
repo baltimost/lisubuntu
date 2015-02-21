@@ -11,7 +11,7 @@ public class HeapSort{
     public static void heapsort(int[] arr){
         //initialize heap
         for(int i = arr.length / 2 - 1;i >= 0;i--){
-            helper(arr, i, arr.length);
+            heaptify(arr, i, arr.length);
         }
             for(int l = 0;l < arr.length;l = l * 2 + 1){
                 for(int j = l;j < l * 2 + 1;j++)
@@ -21,7 +21,7 @@ public class HeapSort{
 
         for(int i = arr.length;i >= 1;i--){
             swap(arr, 0, i - 1);
-            helper(arr, 0, i - 1);
+            heaptify(arr, 0, i - 1);
             for(int l = 0;l < arr.length;l = l * 2 + 1){
                 for(int j = l;j < l * 2 + 1;j++)
                     System.out.print(arr[j] + " ");
@@ -30,12 +30,13 @@ public class HeapSort{
             System.out.println();
         }
     }
-    public static void helper(int[] arr, int s, int e){
+    public static void heaptify(int[] arr, int s, int e){
         int i = s;
         int j = i * 2 + 1;
-        while(j < e && arr[j] < arr[i]){
+        while(j < e) {
             if(j + 1 < e && arr[j + 1] < arr[j])
                 j++;
+            if(arr[i] >= arr[j]) break;
             swap(arr, i, j);
             i = j;
             j = j * 2 + 1;

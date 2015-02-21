@@ -1,0 +1,4 @@
+集合hs1：[green, red, magenta, blue]
+集合hs2：[green, red, yellow]
+集合hs1和hs2都有的元素:[green, red]
+只包含在集合hs1或hs2中的元素:[blue, magenta, yellow]

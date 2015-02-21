@@ -11,7 +11,17 @@ public class UniquePaths{
         }
         return matrix[m - 1][n - 1];
     }
+    public static int uniquePathsAlt(int m, int n){
+        return (int)(getFactorial(m + n - 2) / (getFactorial(n - 1) * getFactorial(m - 1)));
+    }
+    private static double getFactorial(int n){
+        double output = 1;
+        while(n > 0)
+            output *= n--;
+        return output;
+    }
     public static void main(String[] args){
-        System.out.println(uniquePaths(100,100));
+        System.out.println(uniquePaths(10,10));
+        System.out.println(uniquePathsAlt(10,10));
     }
 }
