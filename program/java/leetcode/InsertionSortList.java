@@ -52,4 +52,27 @@ public class InsertionSortList{
         }
         return dummy.next;
     }
+    public static ListNode insertsortAlt(ListNode head) {
+        if(head == null || head.next == null)
+            return head;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode cur = head;
+        while(cur.next != null) {
+            ListNode n = dummy;
+            while(n != cur && n.next.val <= cur.next.val) {
+                n = n.next;
+            }
+            if(n != cur) {
+                ListNode swap = cur.next;
+                cur.next = cur.next.next;
+                swap.next = n.next;
+                n.next = swap;
+            }
+            else {
+                cur = cur.next;
+            }
+        }
+        return dummy.next;
+    }
 }

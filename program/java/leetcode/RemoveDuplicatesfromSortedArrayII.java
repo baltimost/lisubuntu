@@ -14,6 +14,7 @@ public class RemoveDuplicatesfromSortedArrayII{
                 count++;
                 if(count == 1){
                     //A[i] = A[i - 1];
+                    A[i] = A[j];
                     i++;
                 }
             }
@@ -29,3 +30,4 @@ public class RemoveDuplicatesfromSortedArrayII{
         System.out.println();
     }
 }
+

@@ -6,7 +6,7 @@ public class Tools{
             System.out.print(x + " ");
         System.out.println();
     }
-    public static void printl(List<Integer> entry){
+    public static void print(List<Integer> entry){
         for(Integer x : entry)
             System.out.print(x + " ");
         System.out.println();
@@ -17,6 +17,14 @@ public class Tools{
                 System.out.print(y + " ");
             System.out.println();
         }
+    }
+    public static void print(ListNode head) {
+        ListNode n = head;
+        while(n != null) {
+            System.out.print(n.val + " ");
+            n = n.next;
+        }
+        System.out.println();
     }
     public static void swap(int[] arr, int i , int j){
         int tmp = arr[i];
@@ -36,7 +44,7 @@ public class Tools{
         entry.add(9);
         output.add(new ArrayList<Integer>(entry));
 
-        printl(entry);
+        print(entry);
         System.out.println("========");
         printll(output);
     }

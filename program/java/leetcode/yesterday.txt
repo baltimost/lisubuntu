@@ -56,4 +56,19 @@ alternative solution could return early
 *23	Merge k Sorted Lists	21.1%	Hard
 time complexity
 
+54	Spiral Matrix	20.8%	Medium
+59	Spiral Matrix II	31.2%	Medium
+50	Pow(x, n)	26.5%	Medium
+69	Sqrt(x)	22.7%	Medium overflow
+102	Binary Tree Level Order Traversal	29.9%	Easy
+107	Binary Tree Level Order Traversal II	30.5%	Easy
+116	Populating Next Right Pointers in Each Node	35.7%	Medium
+117	Populating Next Right Pointers in Each Node II	31.2%	Hard
+90	Subsets II	27.3%	Medium
+78	Subsets	28.1%	Medium
 
+112	Path Sum	30.1%	Easy notice one trick!
+113	Path Sum II	26.8%	Medium
+147	Insertion Sort List	25.8%	Medium
+24	Swap Nodes in Pairs	32.5%	Medium
+173	Binary Search Tree Iterator	28.7%	Medium

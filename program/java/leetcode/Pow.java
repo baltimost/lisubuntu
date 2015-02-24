@@ -15,7 +15,7 @@ public class Pow{
         else
             return n > 0 ? half * half * x : half * half / x;
     }
-    public static double powAlt(double x, int n){
+    public static double powAlt(double x, int n){ //naive
         if(n == 0)
             return 1;
         if(x == 0)
@@ -36,6 +36,7 @@ public class Pow{
         System.out.println(pow(0.00001,2147483340));
         System.out.println(pow(4.70975, -6));
         System.out.println(pow(4, 6));
+        System.out.println(pow(0, 0));
         System.out.println("end");
         System.out.println(powAlt(0.00001,2147483340));
         System.out.println(powAlt(4.70975, -6));

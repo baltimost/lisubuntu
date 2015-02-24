@@ -47,7 +47,6 @@ public class PopulatingNextRightPointersinEachNodeII{
         TreeNode leftmost = p.left == null ? p.right : p.left; 
         while(leftmost != null){
             TreeNode curr = leftmost;
-            TreeNode h = p;
             while(p != null){
                 if(curr == p.left && p.right != null){
                     curr.next = p.right;

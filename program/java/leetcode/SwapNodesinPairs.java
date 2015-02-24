@@ -36,6 +36,21 @@ public class SwapNodesinPairs {
         }
         return dummy.next;
     }
+    //Almost the same 2015.2.23
+    public static ListNode swapPairsAlt(ListNode head) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode left = dummy;
+        ListNode right = dummy.next;
+        while(left.next != null && right.next != null) {
+            left.next = left.next.next;
+            right.next = right.next.next;
+            left.next.next = right;
+            left = right;
+            right = right.next;
+        }
+        return dummy.next;
+    }
 
     public static void main(String[] args){
         int[] arr = {1};

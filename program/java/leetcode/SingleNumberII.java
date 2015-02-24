@@ -20,7 +20,7 @@ public class SingleNumberII{
     */
     /*
     public int singleNumber(int[] A){
-        int[] countBit = new int[32];
+        int[] countBit = new int[32];//just one count is enough
         int output = 0;
         for(int i=0;i<32;i++){
             for(int j=0;j<A.length;j++){

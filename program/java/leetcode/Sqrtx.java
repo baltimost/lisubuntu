@@ -1,7 +1,7 @@
 public class Sqrtx{
     public static int sqrt(int x){
         long low = 1;
-        long high = x / 2 + 1;
+        long high = x / 2;
         long mid;
         while(low <= high){
             mid = (low + high) / 2;

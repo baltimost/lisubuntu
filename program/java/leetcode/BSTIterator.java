@@ -26,6 +26,19 @@ public class BSTIterator{
             }
         }
     }
+    public int nextAlt() {
+        if(!hasNext()) {
+            return 0;
+        }
+        while(cursor != null) {
+            s.push(cursor);
+            cursor = cursor.left;
+        }
+        cursor = s.pop();
+        int output = cursor.val;
+        cursor = cursor.right;
+        return output; 
+    }
     public static void main(String[] args){
         int[] arr = {1,2,3,' ',' ',4,' ',' ',5,' ',' '};
         TreeNode root = TreeBuilder.create(arr);

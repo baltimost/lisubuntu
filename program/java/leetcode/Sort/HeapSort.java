@@ -39,7 +39,7 @@ public class HeapSort{
             if(arr[i] >= arr[j]) break;
             swap(arr, i, j);
             i = j;
-            j = j * 2 + 1;
+            j = i * 2 + 1;
         }
     }
     public static void swap(int[] arr, int i, int j){
