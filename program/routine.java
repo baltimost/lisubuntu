@@ -29,3 +29,7 @@ difference between interface and abstract class
     attribute:final
 3.interface has no construction
 4.
+
+
+Math:
+Perm & Comb formula
