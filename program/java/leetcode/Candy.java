@@ -11,18 +11,19 @@ public class Candy{
         }
         int output = d[ratings.length - 1];
         for(int i = ratings.length - 2;i >= 0;i--){
-            System.out.println("i=" + i);
             if(ratings[i] > ratings[i + 1] && d[i] <= d[i + 1])
                 d[i] = d[i + 1] + 1;
+            System.out.println("i=" + i + " d[i]:"+d[i]);
             output += d[i];
         }
         return output;
     }
     public static void main(String[] args){
         //int[] test = {4,2,3,4,1};
-        int[] test = {7,4,3,2,8,6,0,1};
+        //int[] test = {7,4,3,2,8,6,0,1};
         //int[] test = {2,2};
         //int[] test = {2,1,4,7,4,8,3,6,4,3,2,1};
+        int[] test = {1,0,2,3,3,1,2,4,7,2,1};
         System.out.println(candy(test));
     }
 }

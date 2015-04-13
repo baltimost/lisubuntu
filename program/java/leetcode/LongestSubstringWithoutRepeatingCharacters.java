@@ -47,20 +47,39 @@ public class LongestSubstringWithoutRepeatingCharacters{
             }
             else{
                 i = hm.get(curr) + 1;
-                System.out.println("i:" + i);
+                //System.out.println("i:" + i);
             }
             hm.put(curr, j);
         }
         return max; 
     }
+    public static int lengthOfLongestSubstringAlt3(String s) {
+        if(s == null || s.length() == 0) {
+            return 0;
+        }
+        HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
+        int output = 0;
+        int i, j;
+        for(i = 0, j = 0;j < s.length();j++) {
+            Character cur = s.charAt(j);
+            if(hm.containsKey(cur)) {
+                output = Math.max(output, j - i);
+                i = Math.max(i, hm.get(cur) + 1);
+            }
+            hm.put(cur, j);
+        }
+        output = Math.max(output, j - i); 
+        return output;
+    }
     public static void main(String[] args){
         //String input = "abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcbaabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|~``~|][}{+=_-)(*&^%$#@!ZYXWVUTSRQPONMLKJIHGFEDCBA0987654321zyxwvutsrponmlkjihgfedcba";
         String input = "wlrbbmqbhcdarzow";
         long start = System.currentTimeMillis();
-        System.out.println(lengthOfLongestSubstring(input));
-        System.out.println(lengthOfLongestSubstringAlt(input));
-        System.out.println(lengthOfLongestSubstringAlt2(input));
+        //System.out.println(lengthOfLongestSubstring(input)); 2ms
+        //System.out.println(lengthOfLongestSubstringAlt(input)); 3ms
+        //System.out.println(lengthOfLongestSubstringAlt2(input)); 2ms
+        System.out.println(lengthOfLongestSubstringAlt3(input)); //2ms
         long end = System.currentTimeMillis();
-        ///System.out.println(end - start);
+        System.out.println(end - start);
     }
 }

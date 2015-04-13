@@ -157,17 +157,17 @@ public class SubstringwithConcatenationofAllWords{
         String[] L = {"foo", "bar","pua","hey"};
         */
 
+        /*
         String S = "aaa";
         String[] L = {"aa", "aa"};
+        */
+        String S = "foobarthebarfooman";
+        String[] L = {"the", "bar", "foo", "man"};
 
         List<Integer> output = findSubstring(S, L);
-        for(Integer x: output)
-            System.out.print(x + " ");
-        System.out.println();
+        System.out.println(output);
 
         output = findSubstringAlt(S, L);
-        for(Integer x: output)
-            System.out.print(x + " ");
-        System.out.println();
+        System.out.println(output);
     }
 }

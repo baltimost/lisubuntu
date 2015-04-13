@@ -52,7 +52,14 @@ public class DecodeWays{
     }
 
     public static void main(String[] args){
+        System.out.println(numDecodings("301111111111"));
+        /*
         System.out.println(numDecodings("11111111"));
         System.out.println(numDecodingsAlt("11111111"));
+
+        System.out.println(numDecodingsAlt("315172"));
+
+        System.out.println(numDecodingsAlt("2147483647"));
+        */
     }
 }

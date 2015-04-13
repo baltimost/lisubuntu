@@ -41,7 +41,7 @@ public class ReverseNodesinkGroup{
                 pioneer = pioneer.next;
                 count++;
             }
-            if(k != count || pioneer == null) break;
+            if(pioneer == null) break;
             for(int i = 1;i < k;i++){
                 ListNode subhead = prev.next;
                 prev.next = curr.next;

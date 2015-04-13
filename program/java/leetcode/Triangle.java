@@ -42,6 +42,24 @@ public class Triangle{
            output = Math.min(output, last.get(i)); 
         return output;
     }
+    public static int minimumTotalBetter(List<List<Integer>> triangle) {
+        if(triangle == null || triangle.get(0) == null)
+            return 0;
+        int n = triangle.size();
+        int m = triangle.get(n - 1).size();
+        int[] d = new int[m];
+        for(int i = n - 1;i >= 0;i--) {
+            for(int j = 0;j < triangle.get(i).size();j++) {
+                if(i == n - 1) {
+                    d[j] = triangle.get(i).get(j);
+                }
+                else {
+                    d[j] = Math.min(d[j], d[j + 1]) + triangle.get(i).get(j);
+                }
+            }
+        }
+        return d[0];
+    }
     public static void main(String[] args){
         List<List<Integer>> input = new ArrayList<List<Integer>>();
         List<Integer> entry = new ArrayList<Integer>();

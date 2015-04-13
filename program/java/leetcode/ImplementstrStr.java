@@ -13,8 +13,8 @@ public class ImplementstrStr{
             
     }
     public static void main(String[] args){
-        String haystack = "";
-        String needle = "ocena";
+        String haystack = "this is the haystack hoho needle haystack hayhay";
+        String needle = "needle";
         System.out.println(strStr(haystack, needle));
     }
 }

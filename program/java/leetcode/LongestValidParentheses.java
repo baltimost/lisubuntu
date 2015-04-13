@@ -16,39 +16,19 @@ public class LongestValidParentheses {
             }
             else{
                 int matchedPos = stack.pop();
-                int curlen = i - matchedPos + 1;
                 if(stack.isEmpty()){
-                    sumLen += curlen;
-                    curlen = sumLen;
+                    sumLen += i - matchedPos + 1; 
+                    curLen = sumLen;
                 }
                 else{
-                    curlen = i - stack.peek();
+                    curLen = i - stack.peek();
                 }
-                output = output > curlen? output : curlen; 
+                output = Math.max(output, curLen);
             }
         }
         return output;
     }
     public static int longestValidParenthesesAlt(String s) {
-        if(s == null || s.length() == 0) return 0;
-        int max = 0;
-        int curr = 0;
-        Stack<Integer> stack = new Stack<Integer>();
-        for(int i = 0;i < s.length();i++){
-            if(s.charAt(i) == '(')
-                stack.push(i);
-            else if(stack.isEmpty())
-                curr = 0;
-            else{ 
-                int tmp = (i - stack.pop() + 1);
-                if(stack.isEmpty())
-                    curr += tmp; 
-                else
-                    curr = i - stack.peek();
-                max = Math.max(max, curr);
-            }
-        }
-        return max;
     }
     public static void main(String[] args){
         String test = "(()(()";

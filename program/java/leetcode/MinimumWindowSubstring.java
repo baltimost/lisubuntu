@@ -57,13 +57,13 @@ public class MinimumWindowSubstring{
             char cur = S.charAt(j);
             if(dict.containsKey(cur)){
                 hm.put(cur, hm.get(cur) == null ? 1 : hm.get(cur) + 1); 
-                if(hm.get(cur) <= dict.get(cur))
+                if(hm.get(cur) <= dict.get(cur)) //to avoid repeated char
                     count++;
                 while(count == T.length()){
-                    if(output.equals("") || j - i + 1 < output.length())
+                    if(output.equals("") || j - i + 1 < output.length())//if output has not been initialized or new output is shorter
                         output = S.substring(i, j + 1);
                     char left = S.charAt(i);
-                    hm.put(left, hm.get(left) - 1);
+                    hm.put(left, hm.get(left) - 1); //to avoid repeated char
                     if(hm.get(left) < dict.get(left))
                         count--;
                     i++;
@@ -71,7 +71,7 @@ public class MinimumWindowSubstring{
                         i++;
                 }
             }
-            else if(hm.isEmpty())
+            else if(hm.isEmpty())//if "KADOBECODEBANC"
                 i++;
         }
         return output;

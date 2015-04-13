@@ -1,12 +1,19 @@
-public class Restaurant{
-    private String name;
-    public Restaurant(String name) { this.name = name;}
-    public String getName() { return name;}
-    
+public class Restaurant {
+    public static Restaurant instance = null;
 
-    public static void main(String[] args){
-        Restaurant r = new Restaurant("Orient Express");
-        System.out.println(r.getName());
+    public static Restaurant getInstance() {
+        if(instance == null) {
+            instance = new Restaurant();
+        }
+        return instance;
+    }
+/*    
+    public Restaurant() {
+        ;
+    }
+    */
+
+    public static void main(String[] args) {
+        Restaurant r = Restaurant.getInstance();
     }
 }
-

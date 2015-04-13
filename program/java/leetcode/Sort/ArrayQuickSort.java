@@ -28,6 +28,43 @@ public class ArrayQuickSort{
         helper(arr, h, i - 1);
         helper(arr, j + 1, t);
     }
+    
+    public static void quicksortAlt(int[] arr) {
+        partition(arr, 0, arr.length - 1);
+    }
+
+    public static void partition(int[] arr, int l, int h) {
+        if(l >= h) {
+            return;
+        }
+        int pivot = arr[l];
+        int i = l, j = h;
+        while(i < j) {
+            while(i < j && pivot <= arr[j]) {
+                j--;
+            }
+            if(i < j) {
+            //Why this sentence? consider 50 20 10 23 5 100 75, after first partition
+            //5 20 10 23 50 100 75, then i++
+            //  i     j
+            //5 20 10 23 50 100 75, 
+            //j i
+            //see the problem now?
+                swap(arr, i, j);
+                i++;
+            }
+            while(i < j && arr[i] <= pivot) {
+                i++;
+            }
+            if(i < j) {
+                swap(arr, i, j);
+                j--;
+            }
+        }
+        partition(arr, l, i - 1);
+        partition(arr, i + 1, h);
+    }
+    
     public static void main(String[] args){
         //int[] test = {60, 71, 49, 11, 82, 49, 3, 66};
         //int[] test = {1,2,3,4,5,6};

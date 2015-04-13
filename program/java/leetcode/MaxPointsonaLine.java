@@ -48,11 +48,11 @@ public class MaxPointsonaLine{
         int dup = 0;
         int con = 0; 
         double k = 0;
-        for(int i = 0;i < points.length;i++){
+        for(int i = 0;i < points.length;i++) {
             m.clear();
             dup = 0;
             con = 0;
-            for(int j = i + 1;j < points.length;j++){
+            for(int j = i + 1;j < points.length;j++) {
                 if(points[i].x == points[j].x && points[i].y == points[j].y)
                     dup++;
                 else {
@@ -69,7 +69,7 @@ public class MaxPointsonaLine{
         }
         return output;
     }
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //Point[] test = {new Point(2,1), new Point(3,2), new Point(4,3), new Point(1,4), new Point(5,1)};
         //Point[] test = {new Point(2,3), new Point(3,3), new Point(-5,3)};
         /*

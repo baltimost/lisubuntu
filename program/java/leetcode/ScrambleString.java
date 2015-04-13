@@ -10,8 +10,11 @@ public class ScrambleString{
             for(int i = 0;i + k < n + 1;i++)
                 for(int j = 0;j + k < n + 1;j++)
                     for(int l = 1;l < k;l++)
-                        d[i][j][k] |= (d[i][j][l] && d[i + l][j + l][k - l]) 
-                            || (d[i][j + k - l][l] && d[i + l][j][k - l]); 
+                        if((d[i][j][l] && d[i + l][j + l][k - l]) 
+                            || (d[i][j + k - l][l] && d[i + l][j][k - l])) {
+                            d[i][j][k] = true;
+                            break;
+                        } 
         for(boolean[][] x: d){
             for(boolean[] y: x){
                 for(boolean z: y)

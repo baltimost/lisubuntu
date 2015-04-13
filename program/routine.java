@@ -1,16 +1,37 @@
+Inorder Postorder traversal(iterative && momris)
+Iterator
+
+PathSum
+sum root to leaf
+
+Set<Integer> set = hm.keySet();
+
+clone graph
+sort list
+Reverse k group, Reverse linked listII
+
+RandomList
+
+distinct subsequences
+edit distance
+interleaving
+scramble
+
+longest valid
+
 Algorithm:
 quick sort bubble sort insertion sort
 
-MinimunWindow
+MinimunWindow!
+LRU
 
 Valid Number
 
-Histogram
-
-Inorder Postorder traversal(iterative)
-Post
-
-kth element in two sorted array corner case
+Regularexpression:
+? 0 or 1
++ 1 or more
+* 0 or more
+.
 
 JAVA:
 access level class packge subclass world
@@ -33,3 +54,15 @@ difference between interface and abstract class
 
 Math:
 Perm & Comb formula
+
+kth element in two sorted array cornercase
+
+Histogram
+
+Post
+
+S Single Responsibility Principle
+O Open Close Principle  
+L Liskov Substitution Principle
+I Interface Segregation Principle
+D Dependency Reverse Principle

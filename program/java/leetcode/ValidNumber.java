@@ -84,5 +84,9 @@ public class ValidNumber{
     public static void main(String[] args){
         System.out.println(isNumber("32.e-80123"));
         System.out.println(isNumberAlt("32.e-80123"));
+        System.out.println(isNumberAlt(".1"));
+        System.out.println(isNumberAlt("1e0.1"));
+        System.out.println(isNumberAlt("1e01"));
+        System.out.println(isNumberAlt("01"));
     }
 }

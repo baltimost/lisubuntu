@@ -22,6 +22,7 @@ public class FindPeakElement{
         return -1;
     }
     public static void main(String[] args){
+        /*
         int[] arr = new int[10000000];
         for(int i = 0;i < arr.length;i++){
             arr[i] = i;
@@ -31,5 +32,8 @@ public class FindPeakElement{
         System.out.println(findPeakElement(arr));
         long end = System.currentTimeMillis();
         System.out.println(end - start);
+        */
+        int[] arr = {1,,1,0};
+        System.out.println(findPeakElement(arr));
     }
 }

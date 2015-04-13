@@ -36,6 +36,22 @@ public class FlattenBinaryTreetoLinkedList{
         }
     }
 
+    public static void flattenMyAlt(TreeNode root){
+        TreeNode pre = null;
+        TreeNode cur = root;
+        while(cur != null) {
+            if(cur.left != null) {
+                pre = cur.left;
+                while(pre.right != null) {
+                    pre = pre.right;
+                }
+                pre.right = cur.right;
+                cur.right = cur.left; 
+                cur.left = null;
+            }
+            cur = cur.right;
+        }
+    }
     public static void main(String[] args){
         //int[] arr = {1,2,3,' ',' ',4,' ',' ',5,' ',6,' ',' '};
         int[] arr = {1,2,' ',3,' ',' ',' '};

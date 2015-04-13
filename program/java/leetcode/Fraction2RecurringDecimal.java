@@ -49,8 +49,12 @@ public class Fraction2RecurringDecimal {
         System.out.println(fractionToDecimal(1, 99) + " " + 1.0/99.0);
         System.out.println(fractionToDecimal(1, 123) + " " + 1/123.0);
         System.out.println(fractionToDecimal(1, 6) + " " + 1/6.0);
-        System.out.println(fractionToDecimal(1, 90) + " " + 1/90.0);
-        */
+        System.out.println(fractionToDecimal(1, 900) + " " + 1/900.0);
+
+
         System.out.println(fractionToDecimal(-1, Integer.MIN_VALUE) + " " + -1.0/Integer.MIN_VALUE);
+        System.out.println(fractionToDecimal(2, 1) + " " + 2/1.0);
+        */
+        System.out.println(fractionToDecimal(1, 3) + " " + 1.0/3.0);
     }
 }

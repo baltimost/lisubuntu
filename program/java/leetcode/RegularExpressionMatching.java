@@ -25,7 +25,7 @@ public class RegularExpressionMatching{
             d[0][i] = false;
         }
         for(int i = 2;i <= p.length();i++){
-            if(p.charAt(i - 1) == '*' && d[i - 2][0])
+            if(p.charAt(i - 1) == '*' && i - 2 >= 0 && d[i - 2][0])
                 d[i][0] = true;
         }
         for(int i = 1;i <= p.length();i++){
@@ -73,5 +73,9 @@ public class RegularExpressionMatching{
         System.out.println(isMatchAlt("a", "a."));
         System.out.println(isMatchAlt("aaa", "ab*ac*a"));
         System.out.println(isMatchAlt("aaa", "ab*a*c*a"));
+
+        System.out.println("..");
+        System.out.println(isMatchAlt("a", "*a"));
+        System.out.println(isMatchAlt("aab", "c*a*b"));
     }
 }

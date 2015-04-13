@@ -69,4 +69,33 @@ public class BinaryTreePreorderTraversal{
         }
         return output;
     }
+    public static List<Integer> preorderTraversalAlt(TreeNode root) {
+        List<Integer> output = new ArrayList<Integer>();
+        if(root == null) {
+            return output;
+        }
+        TreeNode pre = null;
+        TreeNode cur = root;
+        while(cur != null) {
+            output.add(cur.val);
+            if(cur.left != null) {
+                pre = cur.left;
+                while(pre.right != null) {
+                    pre = pre.right;
+                }
+                pre.right = cur.right;
+                cur = cur.left;
+            }
+            else {
+                cur = cur.right;
+            }
+        }
+        return output;
+    }
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,' ',' ',4,' ',' ',5,' ',6,' ',' '};
+        TreeNode root = TreeBuilder.create(arr); 
+        List<Integer> rst = BinaryTreePreorderTraversal.preorderTraversalAlt(root);
+        Tools.print(rst);
+    }
 }

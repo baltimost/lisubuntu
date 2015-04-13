@@ -20,5 +20,6 @@ public class EditDistance{
     }
     public static void main(String[] args){
         System.out.println(minDistance("a", "a"));
+        System.out.println(minDistance("pkpk", "k"));
     }
 }

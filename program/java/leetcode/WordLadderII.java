@@ -1,6 +1,58 @@
 import java.util.*;
 
 public class WordLadderII{
+    public List<List<String>> findLaddersAlt(String start, String end, Set<String> dict){
+        dict.add(end);
+        Queue<String> q = new LinkedList<String>();
+        q.offer(start);
+        HashMap<String, List<List<String>>> hm = new HashMap<String, List<List<String>>>();
+        List<String> entry = new ArrayList<String>();
+        entry.add(start);
+        List<List<String>> value = new ArrayList<List<String>>();
+        value.add(entry);
+        hm.put(start, value);
+
+        while(!q.isEmpty()){
+            String cur = q.poll();
+            if(cur.equals(end))
+                return hm.get(end);
+            char[] charStr = cur.toCharArray();
+            for(int i = 0;i < charStr.length;i++){
+                char origin = charStr[i];
+                for(char j = 'a';j <= 'z';j++){
+                    charStr[i] = j;
+                    String newStr = new String(charStr);
+                    if(dict.contains(newStr)){
+                        if(!hm.containsKey(newStr)){
+                            List<List<String>> newValue = new ArrayList<List<String>>(); 
+                            List<List<String>> preValue = hm.get(cur);
+                            for(List<String> x : preValue){
+                                List<String> newEntry = new ArrayList<String>(x);
+                                newEntry.add(newStr);
+                                newValue.add(newEntry);
+                            }
+                            q.offer(newStr);
+                            hm.put(newStr, newValue);
+                        }
+                        else{
+                            List<List<String>> newValue = hm.get(newStr);
+                            List<List<String>> preValue = hm.get(cur);
+                            if(preValue.get(0).size() + 1 == hm.get(newStr).get(0).size()){
+                                for(List<String> x : preValue){
+                                    List<String> newEntry = new ArrayList<String>(x);
+                                    newEntry.add(newStr);
+                                    newValue.add(newEntry);
+                                }
+                                hm.put(newStr, newValue);
+                            }
+                        }
+                    }
+                }
+                charStr[i] = origin;
+            }
+        }
+        return new ArrayList<List<String>>();
+    }
     public static List<List<String>> findLadders(String start, String end, Set<String> dict){ List<List<String>> output = new ArrayList<List<String>>();
         List<String> entry = new ArrayList<String>();
         entry.add(start);

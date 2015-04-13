@@ -1,36 +1,6 @@
 import java.util.*;
 
 public class LRUCache{
-    /*
-    private int capacity;
-    HashMap<Integer, Integer> hm;
-    Queue<Integer> queue;
-    public LRUCache(int capacity){
-        this.capacity = capacity;
-        hm = new HashMap<Integer, Integer>();
-        queue = new LinkedList<Integer>();
-    }
-    public int get(int key){
-        if(hm.get(key) == null)
-            return -1;
-        else{
-            queue.remove(key);
-            queue.offer(key);
-            return hm.get(key);
-        }
-    }
-    public void set(int key, int value){
-        if(hm.get(key) == null){
-            if(hm.size() == capacity)
-                hm.remove(queue.poll());
-        }
-        else
-            queue.remove(key);
-
-        hm.put(key, value);
-        queue.offer(key);
-    }
-    */
     private class Node{
         Node prev;
         Node next;
@@ -72,7 +42,6 @@ public class LRUCache{
                 tail.next = node;
                 tail = node;
             }
-            traverse();
             return node.value;
         }
     }
@@ -111,22 +80,6 @@ public class LRUCache{
             tail = node;
         }
         hm.put(key, node);
-        traverse();
-    }
-    public void traverse(){
-        /*
-        Node cur = head;
-        while(cur != null){
-            try{
-                Thread.sleep(100);
-            }catch(Exception e){
-                ;
-            }
-            System.out.println("key:"+cur.key+" value:"+cur.value);
-            cur = cur.next;
-        }
-        System.out.println("___");
-        */
     }
 
     public static void main(String[] args){

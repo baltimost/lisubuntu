@@ -7,7 +7,7 @@ public class UniqueBinarySearchTreesII{
     private static List<TreeNode> helper(int start, int end){
         List<TreeNode> rst = new ArrayList<TreeNode>();
         if(start > end){
-            rst.add(null);
+            rst.add(null);//It's important!!!
             return rst;
         }
         for(int i = start;i <=end;i++){

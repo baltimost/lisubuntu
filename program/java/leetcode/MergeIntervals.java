@@ -65,6 +65,11 @@ public class MergeIntervals{
         }
         System.out.println();
 
+        for(Interval x: test){
+            System.out.print("["+x.start +","+x.end+"] ");
+        }
+        System.out.println();
+
 
     }
 }

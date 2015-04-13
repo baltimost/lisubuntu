@@ -3,28 +3,26 @@ import java.util.*;
 public class WordLadder{
     public static int ladderLength(String start, String end, Set<String> dict){
         Queue<String> queue = new LinkedList<String>();
-        String current = start;
-        int count = 1;
         queue.offer(start);
+        int count = 2;
         while(!queue.isEmpty()){
             int size = queue.size();
             for(int i = 0;i < size;i++){
-                current = queue.poll();
+                String current = queue.poll();
+                char[] currents = current.toCharArray();
                 for(int j = 0;j < current.length();j++){
+                    char origin = currents[j];
                     for(char k = 'a';k <= 'z';k++){
-                        char[] currents = current.toCharArray();
                         currents[j] = k;
                         String tmp = new String(currents);
-                        System.out.print(tmp + " ");
                         if(tmp.equals(end))
-                            return count + 1;
+                            return count;
                         if(dict.contains(tmp)){
-                            System.out.print(".");
                             queue.offer(tmp);
                             dict.remove(tmp);
                         }
                     }
-                    System.out.println();
+                    currents[j] = origin;
                 }
             }
             count++;
@@ -32,19 +30,18 @@ public class WordLadder{
         return 0;
     }
     public static void main(String[] args){
+        /*
         Set<String> dict = new HashSet<String>();
         System.out.println(ladderLength("mape","mape",dict));
+        */
+        String start = "hit";
+        String end = "cog";
+        HashSet<String> hs = new HashSet<String>();
+        hs.add("hot");
+        hs.add("dot");
+        hs.add("dog");
+        hs.add("lot");
+        hs.add("log");
+        System.out.println(ladderLength(start, end, hs));
     }
-    /*TLE
-    public static boolean isNeighbor(String x, String y){
-        int count = 0;
-        for(int i = 0;i < x.length();i++){
-            if(x.charAt(i) != y.charAt(i))
-                count++;
-            if(count >= 2)
-                return false;
-        }
-        return true;
-    } 
-    */
 }

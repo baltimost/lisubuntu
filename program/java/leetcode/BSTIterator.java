@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class BSTIterator{
+    /*
     TreeNode cursor;
     Stack<TreeNode> s;
     public BSTIterator(TreeNode root){
@@ -12,21 +13,8 @@ public class BSTIterator{
     public boolean hasNext(){
         return !s.isEmpty() || cursor != null;
     }
-    public int next(){
-        while(true){
-            if(cursor != null){
-                s.push(cursor);
-                cursor = cursor.left;
-            }
-            else{
-                cursor = s.pop();
-                int output = cursor.val;
-                cursor = cursor.right;
-                return output;
-            }
-        }
-    }
-    public int nextAlt() {
+
+    public int next() {
         if(!hasNext()) {
             return 0;
         }
@@ -38,6 +26,44 @@ public class BSTIterator{
         int output = cursor.val;
         cursor = cursor.right;
         return output; 
+    }
+    */
+    private TreeNode cursor;
+    
+    public BSTIterator(TreeNode root) {
+        cursor = root;
+    }
+
+    /** @return whether we have a next smallest number */
+    public boolean hasNext() {
+        return cursor != null;
+    }
+
+    /** @return the next smallest number */
+    public int next() {
+        if(!hasNext()) {
+            return 0;
+        }
+        
+        while(cursor.left != null) {
+            TreeNode pre = cursor.left;
+            while(pre.right != null && pre.right != cursor) {
+                pre = pre.right;
+            }
+            if(pre.right == null) {
+                pre.right = cursor;
+                cursor = cursor.left;
+            }
+            else {
+                int output = cursor.val;
+                cursor = cursor.right;
+                pre.right = null;
+                return output;
+            }
+        }
+        int output = cursor.val;
+        cursor = cursor.right;
+        return output;
     }
     public static void main(String[] args){
         int[] arr = {1,2,3,' ',' ',4,' ',' ',5,' ',' '};

@@ -34,7 +34,7 @@ public class HeapSort{
         int i = s;
         int j = i * 2 + 1;
         while(j < e) {
-            if(j + 1 < e && arr[j + 1] < arr[j])
+            if(j + 1 < e && arr[j + 1] > arr[j])
                 j++;
             if(arr[i] >= arr[j]) break;
             swap(arr, i, j);

@@ -101,6 +101,11 @@ public class WildcardMatching{
         System.out.println(isMatchAlt("caab", "c*a*b"));
         */
 
-        System.out.println(isMatchAlt("abefcdgiescdfimde", "ab*cd?i*de"));
+        //System.out.println(isMatchAlt("abefcdgiescdfimde", "ab*cd?i*de"));
+        System.out.println(isMatchAlt("", "?"));
+        System.out.println(isMatchAlt("ab", "*"));
+        System.out.println(isMatchAlt("aab", "?*"));
+
+        System.out.println(isMatchAlt("abc","*"));
     }
 }

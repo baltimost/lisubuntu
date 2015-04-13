@@ -41,14 +41,14 @@ public class CopyListwithRandomPointer{
         RandomListNode n = dummy;
         while(head != null){
             n.next = new RandomListNode(head.label);
+            n = n.next;
             if(head.random != null){
                 if(hm.get(head.random) != null)
                     n.random = hm.get(head.random);
                 else
                     leftover.add(head);
             }
-            hm.put(head, n.next);
-            n = n.next;
+            hm.put(head, n);
             head = head.next;
         }
         for(RandomListNode x : leftover)
