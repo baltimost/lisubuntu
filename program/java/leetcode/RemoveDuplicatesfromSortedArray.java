@@ -40,9 +40,11 @@ public class RemoveDuplicatesfromSortedArray{
             return 0;
         int i = 1;
         int j = 1;
-        for(;j < A.length;j++)
-            if(A[j] != A[j - 1])
+        for(;j < A.length;j++) {
+            if(A[j] != A[j - 1]) {
                 A[i++] = A[j];
+            }
+        }
         return i; 
     }
     public static void main(String[] args){

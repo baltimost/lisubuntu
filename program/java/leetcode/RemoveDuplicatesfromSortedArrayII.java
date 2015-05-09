@@ -13,9 +13,7 @@ public class RemoveDuplicatesfromSortedArrayII{
             else{
                 count++;
                 if(count == 1){
-                    //A[i] = A[i - 1];
-                    A[i] = A[j];
-                    i++;
+                    A[i++] = A[j];
                 }
             }
         }

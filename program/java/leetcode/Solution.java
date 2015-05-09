@@ -1,48 +1,25 @@
 import java.util.*;
 
 public class Solution {
-    public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> output = new ArrayList<Integer>();
-        TreeNode cur = root;
-        TreeNode pre = null;
-        while(cur != null) {
-            if(cur.left != null) {
-                pre = cur.left;
-                while(pre.right != null && pre.right != cur) {
-                    pre = pre.right;
-                }
-                if(pre.right == null) {
-                    pre.right = cur;
-                    cur = cur.left;
-                }
-                else {
-                    output.add(cur.val);
-                    cur = cur.right;
-                    pre.right = null;
-                }
-            }
-            else {
-                output.add(cur.val);
-                cur = cur.right;
-            }
+    public int maxRec(int[] h) {
+        if(h == null || h.length == 0) {
+            return 0;
         }
-    }
-
-    public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> output = new ArrayList<Integer>();
-        TreeNode n;
-        Stack<TreeNode> s = new Stack<TreeNode>();
-        while(n != null || !s.isEmpty()) {
-            if(n != null) {
-                s.push(n);
-                n = n.left;
-            }
-            else {
-                n = s.pop();
-                output.add(n.val);
-                n = n.right;
-            }
+        int output = Integer.MIN_VALUE;
+        Stack<Integer> s = new Stack<Integer>();
+        s.push(h[0]);
+        for(int i = 2;i < h.length;i++) {
+            int curH = i == height.length ? 0 : h[i];
+            while(!s.isEmpty() && curH < h[s.peek()]) {
+                int h = s.pop();
+                int w = s.isEmpty() ? i : i - s.peek() - 1;
+                output = Math.max(output, h * w);
+            } 
         }
         return output;
+    }
+    public static void main(String[] args) {
+        Stack<Integer> s = new Stack<Integer>();
+        System.out.println(s.peek());
     }
 }

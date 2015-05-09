@@ -21,7 +21,7 @@ public class FirstMissingPositive{
     public static int firstMissingPositiveAlt(int[] A){
         if(A == null || A.length == 0) return 1;
         for(int i = 0;i < A.length;){
-            if(A[i] < 0 || A[i] >= A.length || A[i] == i || A[i] == A[A[i]])
+            if(A[i] < 0 || A[i] >= A.length || /*A[i] == i || */A[i] == A[A[i]])
                 i++;
             else
                 Tools.swap(A, i, A[i]);

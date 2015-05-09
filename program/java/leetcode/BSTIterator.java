@@ -45,25 +45,29 @@ public class BSTIterator{
             return 0;
         }
         
-        while(cursor.left != null) {
-            TreeNode pre = cursor.left;
-            while(pre.right != null && pre.right != cursor) {
-                pre = pre.right;
-            }
-            if(pre.right == null) {
-                pre.right = cursor;
-                cursor = cursor.left;
+       while(true) {
+            if(cursor.left != null) {
+                TreeNode pre = cursor.left;
+                while(pre.right != null && pre.right != cursor) {
+                    pre = pre.right;
+                }
+                if(pre.right == null) {
+                    pre.right = cursor;
+                    cursor = cursor.left;
+                }
+                else {
+                    int output = cursor.val;
+                    cursor = cursor.right;
+                    pre.right = null;
+                    return output;
+                }
             }
             else {
                 int output = cursor.val;
                 cursor = cursor.right;
-                pre.right = null;
                 return output;
             }
         }
-        int output = cursor.val;
-        cursor = cursor.right;
-        return output;
     }
     public static void main(String[] args){
         int[] arr = {1,2,3,' ',' ',4,' ',' ',5,' ',' '};

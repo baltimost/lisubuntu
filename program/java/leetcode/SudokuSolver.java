@@ -9,11 +9,10 @@ public class SudokuSolver{
         int row = start / board[0].length;
         int col = start % board[0].length;
         if(board[row][col] == '.'){
-            for(int j = 1; j <= 9;j++){
-                board[row][col] = (char)(j + '0');
-                if(isValidBlock(board, row, col))
-                    if(helper(board, start + 1))
-                        return true;
+            for(int i = 1; i <= 9;i++){
+                board[row][col] = (char)(i + '0');
+                if(isValidBlock(board, row, col) && helper(board, start + 1))
+                    return true;
             }
             board[row][col] = '.';
         }

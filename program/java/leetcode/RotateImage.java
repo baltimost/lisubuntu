@@ -13,13 +13,17 @@ public class RotateImage{
         }
     }
     public static void rotateBetter(int[][] matrix) {
-        for(int s = 0, e = matrix.length - 1;s < matrix.length / 2;s++, e--) {
+        if(matrix == null) {
+            return;
+        }
+        //for(int s = 0, e = matrix.length - 1;s < matrix.length / 2;s++, e--) {
+        for(int s = 0, e = matrix.length - 1;s < e;s++, e--) {
             for(int i = 0;i < e - s;i++) {
                 int tmp = matrix[s][s + i];
-                matrix[s][s + i] = matrix[s + i][e];
-                matrix[s + i][e] = matrix[e][e - i];
-                matrix[e][e - i] = matrix[e - i][s];
-                matrix[e - i][s] = tmp;
+                matrix[s][s + i] = matrix[e - i][s];
+                matrix[e - i][s] = matrix[e][e - i];
+                matrix[e][e - i] = matrix[s + i][e];
+                matrix[s + i][e] = tmp;
             }
         }
     }

@@ -56,5 +56,6 @@ public class Fraction2RecurringDecimal {
         System.out.println(fractionToDecimal(2, 1) + " " + 2/1.0);
         */
         System.out.println(fractionToDecimal(1, 3) + " " + 1.0/3.0);
+        System.out.println(fractionToDecimal(3, 7) + " " + 3.0/7.0);
     }
 }

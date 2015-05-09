@@ -67,7 +67,7 @@ public class ValidNumber{
                     sig = false;
                     num = false;
                     dec = false;//not for exp itself, but for the judgement of sig 
-                }
+                
             }
             else if(curr == ' ')
                 break;

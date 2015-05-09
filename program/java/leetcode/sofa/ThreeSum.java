@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Ans {
+public class ThreeSum {
     public static List<List<Integer>> threeSum(int[] arr, int target) {
         List<List<Integer>> output = new ArrayList<List<Integer>>();
         if(arr == null || arr.length <= 2)
@@ -22,7 +22,7 @@ public class Ans {
         for(int i = 0, j = e;i < j;) {
             int sum = arr[i] + arr[j];
             if(sum == target) {
-                List<Integer> entry = new ArrayList<Integr>();
+                List<Integer> entry = new ArrayList<Integer>();
                 entry.add(arr[i]);
                 entry.add(arr[j]);
                 output.add(entry);
@@ -40,5 +40,12 @@ public class Ans {
                 j--;
             }
         }
+        return output;
+    }
+    public static void main(String[] args) {
+        //int[] arr = {1,2,-2,-1};
+        int[] arr = {1,2,2,2,100};
+        List<List<Integer>> output = threeSum(arr, 5);
+        System.out.println(output);
     }
 }

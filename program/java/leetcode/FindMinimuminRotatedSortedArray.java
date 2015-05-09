@@ -22,23 +22,24 @@ public class FindMinimuminRotatedSortedArray{
         int min = Integer.MAX_VALUE;
         while(l <= h){
             m = (l + h) / 2;
-            //
+            /*
             if(arr[m] >= arr[l] && arr[m] <= arr[h])
                 return arr[l];
-            //
-            if(arr[m] >= arr[l]){
+            */
+            if(arr[m] > arr[l]) {
                 min = Math.min(min, arr[l]);
                 l = m + 1;
             }
-            else{
+            else if(arr[m] < arr[l]) {
                 min = Math.min(min, arr[m]);
                 h = m - 1;
             }
+            else {
+                min = Math.min(min, arr[m]);
+                l++;
+            }
         }
-        //return min; 
-
-        System.out.println("==");
-        return h;
+        return min; 
     }
     public static void main(String[] args){
         //int[] arr = {4,5,6,7,0,1,3};

@@ -117,7 +117,8 @@ public static int minCut(String s){
     }
     public static void main(String[] args){
         long start = System.currentTimeMillis();
-        String test = "fdzkalxdfababababababbbcbababababababababa";
+        //String test = "fdzkalxdfababababababbbcbababababababababa";
+        String test = "holloleae";
         //String test = "fifgbeajcacehiicccfecbfhhgfiiecdcjjffbghdidbhbdbfbfjccgbbdcjheccfbhafehieabbdfeigbiaggchaeghaijfbjhi";
         System.out.println("cut:" + minCut(test));
         long end = System.currentTimeMillis();

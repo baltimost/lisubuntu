@@ -47,7 +47,8 @@ public class TrappingRainWater{
         return output;
     }
     public static void main(String[] args){
-        int[] test = {0,1,0,2,1,0,1,3,2,1,2,1};
+        //int[] test = {0,1,0,2,1,0,1,3,2,1,2,1};
+        int[] test = {2,1,3,2,4,1,2,3,1,};
         System.out.println(trap(test));
         System.out.println(trapAlt(test));
     }

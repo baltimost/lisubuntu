@@ -1,11 +1,14 @@
+**16	3Sum Closest	27.0%	Medium
 1	Two Sum	18.2%	Medium 
 15	3Sum	16.7%	Medium two sum subroutine must change, reverse?
 18	4Sum	21.4%	Medium when lst pass consider optimization?
+**16	3Sum Closest	27.0%	Medium
                     ksum Jiang Wei?
 94	Binary Tree Inorder Traversal	35.9%	Medium
 145	Binary Tree Postorder Traversal	31.6%	Hard
 144	Binary Tree Preorder Traversal	35.9%	Medium
-**16	3Sum Closest	27.0%	Medium
+along with iterator & convert tree to list
+
 
 36	Valid Sudoku	27.2%	Easy
 13	Roman to Integer	34.4%	Easy
@@ -23,6 +26,7 @@
 131	Palindrome Partitioning	26.0%	Medium
 *132	Palindrome Partitioning II	18.9%	Hard
 5	Longest Palindromic Substring	20.7%	Medium Manacher's algorithm; DP a trick, see pitfall
+
 *33	Search in Rotated Sorted Array	28.8%	Hard
 
 81	Search in Rotated Sorted Array II	31.3%	Medium
@@ -33,6 +37,7 @@ alternative solution could return early
 150	Evaluate Reverse Polish Notation	20.4%	Medium
 71	Simplify Path	19.9%	Medium	
 29	Divide Two Integers	15.9%	Medium overflow?
+
 
 74	Search a 2D Matrix	31.4%	Medium
 73	Set Matrix Zeroes	31.2%	Medium early break, and firstrow firstcol set
@@ -46,7 +51,7 @@ alternative solution could return early
 137	Single Number II	34.3%	Medium
 93	Restore IP Addresses	20.7%	Medium
 
-75	Sort Colors	32.4%	Medium what if 4 colors?
+75	Sort Colors	32.4%	Medium trick what if 2 colors?
 92	Reverse Linked List II	26.2%	Medium
 *143	Reorder List	20.7%	Medium
 *80	Remove Duplicates from Sorted Array II	30.7%	Medium
@@ -87,7 +92,7 @@ time complexity
 11	Container With Most Water	31.6%	Medium
 120	Triangle	26.9%	Medium
 77	Combinations	30.4%	Medium
-106	Construct Binary Tree from Inorder and Postorder Traversal	26.6%	Medium
+106	Construct Binary Tree from Inorder and Postorder Traversal	26.6%	Medium yong zuixin de yige
 105	Construct Binary Tree from Preorder and Inorder Traversal	26.5%	Medium
 39	Combination Sum	27.3%	Medium one notice point
 40	Combination Sum II	24.8%	Medium
@@ -123,25 +128,30 @@ together with implement tomorrow kmp?
 25	Reverse Nodes in k-Group	25.2%	Hard use same subroutine with reverse linkedlist II
 
 135	Candy	19.8%	Hard
-124	Binary Tree Maximum Path Sum	20.8%	Hard
+124	Binary Tree Maximum Path Sum	20.8%	Hard compare with zero
 44	Wildcard Matching	14.7%	Hard  "aab", "?*a*b"
 10	Regular Expression Matching	20.6%	Hard
 138	Copy List with Random Pointer	24.1%	Hard exists a constant space implementation
 174	Dungeon Game	16.4%	Hard
-115	Distinct Subsequences	25.4%	Hard zhuanhuan fangchen a little hard to figure out
 
 149	Max Points on a Line	11.7%	Hard
-6	Merge Intervals	21.5%	Hard two pointers
+128	Longest Consecutive Sequence	28.8%	Hard
 
-57	Insert Interval	20.9%	Hard
 42	Trapping Rain Water	29.6%	Hard
 85	Maximal Rectangle	21.6%	Hard
 84	Largest Rectangle in Histogram	22.1%	Hard
+---------
 
+6	Merge Intervals	21.5%	Hard two pointers
+57	Insert Interval	20.9%	Hard
+
+115	Distinct Subsequences	25.4%	Hard zhuanhuan fangchen a little hard to figure out
 72	Edit Distance	25.8%	Hard
 97	Interleaving String	20.1%	Hard
-128	Longest Consecutive Sequence	28.8%	Hard
 
+------------------------------
+------------------------------
+------------------------------
 114	Flatten Binary Tree to Linked List	28.4%	Medium
 
 32	Longest Valid Parentheses	20.2%	Hard

@@ -1,3 +1,16 @@
+distinct subsequences
+edit distance
+interleaving
+scramble
+
+merge k sorted lists
+Remove DupII array & list
+Sort colors
+
+populateII
+
+pow sqrt trailing_zero divide 2 int
+
 Inorder Postorder traversal(iterative && momris)
 Iterator
 
@@ -12,10 +25,6 @@ Reverse k group, Reverse linked listII
 
 RandomList
 
-distinct subsequences
-edit distance
-interleaving
-scramble
 
 longest valid
 

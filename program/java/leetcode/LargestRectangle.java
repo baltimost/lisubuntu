@@ -28,7 +28,8 @@ public class LargestRectangle{
         //int[] height = {0,2,3,4,6,5};
 
         //int[] height = {2,1,5,6,2,3};
-        int[] height = {0,2,3,2,2,4,5,6,4,2,3};
+        //int[] height = {0,2,3,2,2,4,5,6,4,2,3};
+        int[] height = {2,3,4,3,1,3,2,1};
         System.out.println(largestRectangleArea(height));
     }
 }

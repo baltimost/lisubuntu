@@ -92,9 +92,10 @@ public class BinaryTreePostorderTraversal{
     }
    
     public static void main(String[] args){
-        int[] input = {1,2,3,' ',' ',35,4,' ',6,' ',' ',5,' ',' ',7,' ',8,' ',' '};
+        //int[] input = {1,2,3,' ',' ',35,4,' ',6,' ',' ',5,' ',' ',7,' ',8,' ',' '};
         //int[] input = {1,2,' ',' ',3,' ',' '};
         //int[] input = {1,2,' ',' ',' '};
+        int[] input = {1,2,3,' ',' ',4,' ',' ',5,' ',6,' ',' '};
         TreeNode root = TreeBuilder.create(input);
         List<Integer> rst = postorderTraversalAlt(root); 
         for(Integer x : rst)
