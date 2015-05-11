@@ -29,6 +29,30 @@ public class LongestValidParentheses {
         return output;
     }
     public static int longestValidParenthesesAlt(String s) {
+        Stack<Integer> s = new Stack<Integer>();
+        int curlen = 0;
+        int sumlen = 0;
+        for(int i = 0;i < s.length();i++) {
+            char cur = s.charAt(i);
+            if(cur  == '(') {
+                s.push(i);
+            }
+            else if(s.isEmpty()) {
+                sumlen = 0;
+            }
+            else {
+                int matchedPos = s.pop();
+                if(s.isEmpty()) {
+                    sumlen += i - matchedPos + 1;
+                    curlen = sumlen;
+                }
+                else {
+                    curlen = i - s.peek();
+                }
+                output = Math.max(output, curlen);
+            }
+        }
+        return output;
     }
     public static void main(String[] args){
         String test = "(()(()";
