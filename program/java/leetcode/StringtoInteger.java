@@ -22,7 +22,7 @@ public class StringtoInteger{
            ;index++){
             output = output * 10 + (str.charAt(index) - '0');
         }
-        System.out.println(output);
+        //System.out.println(output);
         if(output * sign >= Integer.MAX_VALUE)
             return Integer.MAX_VALUE;
         if(output * sign <= Integer.MIN_VALUE)
@@ -57,5 +57,9 @@ public class StringtoInteger{
         System.out.println(atoi("123"));
         System.out.println(atoiAlt("123"));
         System.out.println(atoi("3093h240"));
+        System.out.println(atoiAlt("+123"));
+        //System.out.println(atoiAlt(" "));
+        int n = 1;
+        System.out.println(-n);
     }
 }

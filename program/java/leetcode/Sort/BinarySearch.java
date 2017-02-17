@@ -1,6 +1,6 @@
 public class BinarySearch{
     public static int binarysearch(int[] arr, int target){
-        int l = 0, h = arr.length;
+        int l = 0, h = arr.length - 1;
         int m;
         while(l <= h){
             m = (l + h) / 2;

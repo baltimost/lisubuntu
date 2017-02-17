@@ -2,7 +2,9 @@ import java.util.*;
 
 public class Halo {
     public static void main(String[] args) {
-        char a;
-        System.out.println(a);
+        long n = 0;
+        n = (long)Integer.MAX_VALUE * 2;
+        System.out.println(n);
+        System.out.println((Integer)Character.MAX_VALUE);
     }
 }

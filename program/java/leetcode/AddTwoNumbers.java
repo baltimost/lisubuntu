@@ -14,4 +14,20 @@ public class AddTwoNumbers{
         }
         return dummy.next;
     }
+    public static int fibonazzi(int n) {
+        if(n == 1 || n == 2) {
+            return 1;
+        }
+        int f1 = 1, f2 = 1, f3;
+        for(int i = 3;i <= n;i++) {
+            f3 = f1 + f2;
+            f1 = f2;
+            f2 = f3;
+        }
+        return f2;
+    }
+    public static void main(String[] args){
+        System.out.println(fibonazzi(3));
+        System.out.println(fibonazzi(7));
+    }
 }

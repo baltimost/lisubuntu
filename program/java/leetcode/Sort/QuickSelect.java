@@ -41,6 +41,10 @@ public class QuickSelect{
     public static void main(String[] args){
         //int[] arr = {10,20,30,40,50,60,70,80};
         int[] arr = {40, 60, 20, 10, 30, 50, 80, 70};
-        System.out.println(quickselect(arr, 5));
+        System.out.println(quickselect(arr, 1));
+        for(int x : arr) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
     }
 }

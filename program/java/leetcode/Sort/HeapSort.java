@@ -13,21 +13,25 @@ public class HeapSort{
         for(int i = arr.length / 2 - 1;i >= 0;i--){
             heaptify(arr, i, arr.length);
         }
+        /*
             for(int l = 0;l < arr.length;l = l * 2 + 1){
                 for(int j = l;j < l * 2 + 1;j++)
                     System.out.print(arr[j] + " ");
                 System.out.println();
             }
+            */
 
         for(int i = arr.length;i >= 1;i--){
             swap(arr, 0, i - 1);
             heaptify(arr, 0, i - 1);
+            /*
             for(int l = 0;l < arr.length;l = l * 2 + 1){
                 for(int j = l;j < l * 2 + 1;j++)
                     System.out.print(arr[j] + " ");
                 System.out.println();
             }
             System.out.println();
+            */
         }
     }
     public static void heaptify(int[] arr, int s, int e){

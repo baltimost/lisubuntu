@@ -1,29 +1,18 @@
 public class MaximumProductSubarray{
-    public static int maxProduct(int[] A){
-        if(A == null || A.length == 0)
+    public static int maxProduct(int[] A) {
+        if(A == null || A.length == 0) {
             return 0;
-        int max = 0;
-        int curr = 0;
-        int candidate = 0;
-        for(int i = 0;i < A.length;i++){
-            if(i == 0){
-                max = A[0];
-                curr = A[0];
-                candidate = A[0];
-            }
-            else{
-                curr *= A[i];
-                candidate *= A[i];
-                max = Math.max(max, Math.max(curr, candidate));
-            }
-            if(A[i] == 0){
-                curr = 1;
-                candidate = 1;
-            }
-            else if(A[i] < 0)
-                curr = 1;
         }
-        return max;
+        int max = A[0];
+        int min = A[0];
+        int output = A[0];
+        for(int i = 1;i < A.length;i++) {
+            int tmp = max;
+            max = Math.max(A[i], Math.max(max * A[i], min * A[i]));
+            min = Math.min(A[i], Math.min(tmp * A[i], min * A[i]));
+            output = Math.max(output, max);
+        }
+        return output;
     }
     public static void main(String[] args){
         //int[] arr = {5,4,3,8,-5,4,2,-4,2,-3,7,8,6,9};

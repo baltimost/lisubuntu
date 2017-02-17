@@ -51,8 +51,6 @@ public class LongestIncreasingSubsequence{
     }
 } 
 
-
-
     /*Solution2: Binary Search Related
     public static int LISlen(int[] sequence){
         ArrayList<Integer> al = new ArrayList<Integer>();
@@ -81,4 +79,4 @@ public class LongestIncreasingSubsequence{
         }
         return al.size();
     }
-    */
+   */

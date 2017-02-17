@@ -20,6 +20,7 @@ public class TreeBuilder{
         TreeBuilder tb = new TreeBuilder();
         int[] commonArr = {1,2,4,' ',' ',5,' ',' ',3,6,' ',' ',7,' ',' '}; 
         TreeNode commonRoot =  tb.create(commonArr);
+
         /*Populating*/
         /*
         int[] input1 = {'A','B','C',' ',' ','D','E',' ','G',' ',' ','F',' ',' ',' '}; 

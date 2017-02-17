@@ -34,6 +34,7 @@ public class Pow{
     }
     public static void main(String[] args){
         System.out.println(pow(0.00001,2147483340));
+        /*
         System.out.println(pow(4.70975, -6));
         System.out.println(pow(4, 6));
         System.out.println(pow(0, 0));
@@ -41,5 +42,6 @@ public class Pow{
         System.out.println(powAlt(0.00001,2147483340));
         System.out.println(powAlt(4.70975, -6));
         System.out.println(powAlt(4, 6));
+        */
     }
 }

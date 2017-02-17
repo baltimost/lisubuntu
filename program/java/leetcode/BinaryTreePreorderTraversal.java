@@ -93,9 +93,10 @@ public class BinaryTreePreorderTraversal{
         return output;
     }
     public static void main(String[] args) {
-        int[] arr = {1,2,3,' ',' ',4,' ',' ',5,' ',6,' ',' '};
+       // int[] arr = {1,2,3,' ',' ',4,' ',' ',5,' ',6,' ',' '};
+        int[] arr = {1,' ',' '};
         TreeNode root = TreeBuilder.create(arr); 
-        List<Integer> rst = BinaryTreePreorderTraversal.preorderTraversalAlt(root);
+        List<Integer> rst = BinaryTreePreorderTraversal.preorderTraversal(root);
         Tools.print(rst);
     }
 }

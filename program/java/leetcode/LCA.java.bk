@@ -1,0 +1,46 @@
+public class LCA {
+    static TreeNode output;
+    public static TreeNode lca(TreeNode root, TreeNode n1, TreeNode n2) {
+        helper(root, n1, n2);
+        return output;
+    }
+
+    public static boolean helper(TreeNode root, TreeNode n1, TreeNode n2) {
+        if(root == null) {
+            return false;
+        }
+        /*
+        if(root == n1 || root == n2) {
+            return true;
+        }
+        */
+        if(root.val == n1.val && root.val == n2.val) {
+            output = root;
+            return true;
+        }
+        boolean left = helper(root.left, n1, n2);
+        boolean right = helper(root.right, n1, n2);
+        if(left && right) {
+            output = root;
+            return true;
+        }
+        else if(left || right) {
+            if(root.val == n1.val || root.val == n2.val) {
+                output = root;
+            }
+            return true;
+        }
+        else {
+            return root.val == n1.val || root.val == n2.val;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1,2,4,8,' ',' ',9,' ',' ',' ',3,6,10,' ',' ',11,' ',' ',7,12,' ',' ',13,' ',' '};
+        TreeNode root = TreeBuilder.create(arr);
+        TreeNode n1 = new TreeNode(7);
+        TreeNode n2 = new TreeNode(3);
+        TreeNode lca = lca(root, n1, n2);
+        System.out.println(lca == null ? null : lca.val);
+    }
+}

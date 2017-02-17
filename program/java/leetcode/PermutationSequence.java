@@ -74,8 +74,11 @@ public class PermutationSequence{
     }
     public static void main(String[] args){
         long start = System.currentTimeMillis();
-        System.out.println(getPermutation(3, 6));
-        System.out.println(getPermutationAlt(3, 6));
+        //System.out.println(getPermutation(3, 6));
+        //System.out.println(getPermutationAlt(3, 6));
+        for(int i = 1;i <= 24;i++) {
+            System.out.println(getPermutationAlt(4, i));
+        }
         long interval = System.currentTimeMillis() - start;
         //System.out.println(interval);
     }

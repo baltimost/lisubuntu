@@ -32,7 +32,8 @@ public class WordSearch{
             {'S','F','C','S'},
             {'A','D','E','E'}
         };
-        System.out.println(exist(input, "ABCCFD"));
+        System.out.println(exist(input, "ABCCFS"));
+        System.out.println(exist(input, "ABCCFS"));
         /*
         System.out.println(exist(input, "DEE"));
         for(char[] x : input){

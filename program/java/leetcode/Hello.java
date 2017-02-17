@@ -2,13 +2,9 @@ import java.util.*;
 
 public class Hello{
     public static void main(String[] args){
-        System.out.println(Integer.MAX_VALUE);
+        String[] a = new String[10];
+        System.out.println(a[8]);
+        ArrayList<ArrayList<String>>[] d = new ArrayList<ArrayList<String>>[10];
+        System.out.println(d[8]);
     }
-    static void foo(Node node){
-        node.a = 0;
-    }
-}
-
-class Node{
-    int a = 1;
 }

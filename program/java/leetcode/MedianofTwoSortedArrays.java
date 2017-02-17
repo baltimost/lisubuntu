@@ -1,6 +1,7 @@
-public class MedianofTwoSortedArrays{
-    /*Actually no need to merge, just count i and j, when i + j == k return*/
-    public static double findMedianSortedArrays(int A[], int B[]){
+public class MedianofTwoSortedArrays {
+    /* Naive
+       Actually no need to merge, just count i and j, when i + j == k return*/
+    public static double findMedianSortedArrays(int A[], int B[]) {
         int C[] = new int[A.length + B.length];
         int k = 0;
         int i = 0;
@@ -38,6 +39,7 @@ public class MedianofTwoSortedArrays{
             
     }
     private static int findKthElement(int A[], int B[], int k){
+        int flag = 0;
         int n = A.length;
         int m = B.length;
         int l = 0;
@@ -75,5 +77,7 @@ public class MedianofTwoSortedArrays{
         System.out.println(findMedianSortedArrays(A,B));
         System.out.println(findMedianSortedArraysAlt(A,B));
         System.out.println(findMedianSortedArraysAlt(B,A));
+
+        System.out.println(findKthElement(A, B, 30));
     }
 }

@@ -28,6 +28,7 @@ public class ReverseInteger{
         return output;
     }
     */
+    /*
     public static int reverse(int x){
         int output = 0;
         boolean isNeg = x < 0;
@@ -35,6 +36,15 @@ public class ReverseInteger{
             if(!isNeg && output > (Integer.MAX_VALUE - x % 10) / 10 ||
             isNeg && output < (Integer.MIN_VALUE - x % 10) / 10)
                 return 0; 
+            output = output * 10 + x % 10;
+            x /= 10;
+        }
+        return output;
+    }
+    */
+    public static int reverse(int x) {
+        int output = 0;
+        while(x != 0) {
             output = output * 10 + x % 10;
             x /= 10;
         }
@@ -50,7 +60,18 @@ public class ReverseInteger{
         System.out.println(reverse(i));
         i = 1534236469;
         System.out.println(reverse(i));
+        i = 153423646;
+        System.out.println(reverse(i));
         i = -123;
         System.out.println(reverse(i));
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(964632435);
+        System.out.println(964632435 * 2);
+        System.out.println(964632435 * 3);
+        System.out.println(964632435 * 4);
+        System.out.println(964632435 * 5);
+        System.out.println(964632435 * 6);
+        System.out.println(964632435 * 7);
+        System.out.println(964632435 * 8);
     }
 }

@@ -122,11 +122,11 @@ public class WordBreakII{
 
     public static void main(String[] args){
         HashSet<String> test = new HashSet<String>();
-        /*
         String tests = "cars";
         test.add("car");
         test.add("ca");
         test.add("rs");
+        /*
         String tests = "catsanddog";
         test.add("cat");
         test.add("cats");
@@ -141,6 +141,7 @@ public class WordBreakII{
         test.add("code");
         
         */
+        /*
 		String tests = "aaaaaaaaaaaaaaaaaaaaaab";
         test.add("a");
         test.add("aa");
@@ -148,6 +149,7 @@ public class WordBreakII{
         test.add("aaaa");
 		test.add("aaaaa");
 		test.add("aaaaaa");
+        */
 	    
         Long before = System.currentTimeMillis();    
         ArrayList<String> output = wordBreak(tests, test);

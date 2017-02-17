@@ -1,39 +1,50 @@
 import java.util.*;
 
 public class Solution {
-    public List<String[]> nQueens(int n) {
-        List<String[]> output = new ArrayList<String[]>();
-    }
-    private void helper(int n, int row, int[] thQueen, List<String[]> output) {
-        if(row == n) {
-            String[] entry = new String[n];
-            for(int i = 0;i < n;i++) {
-                StringBuilder sb = new StringBuilder();
-                for(int j = 0;j < n;j++) {
-                    sb.append(j == thQueen[i] ? "Q" : ".");
-                }
-                entry[i] = sb.toString();
+    public List<List<Integer>> 3sum(int[] arr, int target) {
+        List<List<Integer>> output = new ArrayList<List<Integer>>();
+        Arrays.sort(arr);
+        int n = arr.length;
+        for(int i = n - 1;i >= 2;i--) {
+            if(i != n - 1 && arr[i] == arr[i + 1]) {
+                continue;
             }
-            output.add(entry);
-            return;
-        }
-        for(int i = 0;i < n;i++) {
-            thQueen[row] = i;
-            if(isValid(thQueen, row)) {
-                helper(n, row + 1, thQueen, output);
+            List<List<Integer>> twosum = 2sum(arr, target - arr[i]);
+            for(List<Integer> two : twosum) {
+                two.add(arr[i]);
             }
+            output.addAll(twosum);
         }
-    }
-    private boolean isValid(int[] thQueen, int row) {
-        for(int i = 0;i < row;i++) {
-            if(thQueen[i] == thQueen[row]) {
-                return false;
-            }
-            if(Math.abs((thQueen[i] - thQueen[row]) / (i - row)) == 1) {
-                return false;
-            } 
-        }
-        return true;
+        return output;
     }
 
+    public List<List<Integer>> 2sum(int[] arr, int target) {
+        List<List<Integer>> output = new ArrayList<List<Integer>>();
+        int n = arr.lenth;
+        int l = 0, r = n - 1;
+        while(l < r) {
+            int sum = arr[l] + arr[r];
+            if(sum == target) {
+                List<Integer> entry = new ArrayList<Integer>();
+                entry.add(arr[l]);
+                entry.add(arr[r]);
+                output.add(entry);
+                l++;
+                r--;
+                while(l < r && arr[l] == arr[l - 1]) {
+                    l++;
+                }
+                while(l < r && arr[r] == arr[r + 1]) {
+                    r--;
+                }
+            }
+            else if(sum < target) {
+                l++;
+            }
+            else {
+                r--;
+            }
+        }
+        return output;
+    }
 }

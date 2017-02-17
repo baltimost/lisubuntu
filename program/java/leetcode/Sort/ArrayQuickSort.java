@@ -44,12 +44,13 @@ public class ArrayQuickSort{
                 j--;
             }
             if(i < j) {
-            //Why this sentence? consider 50 20 10 23 5 100 75, after first partition
+            //Why this sentence? consider 50 20 10 23 5 100 75, after first exchange
             //5 20 10 23 50 100 75, then i++
-            //  i     j
+            //  i        j 
             //5 20 10 23 50 100 75, 
-            //j i
+            //           j  i
             //see the problem now?
+            System.out.println("before first swap" + "i:"+i+" j:"+j);
                 swap(arr, i, j);
                 i++;
             }
@@ -57,6 +58,7 @@ public class ArrayQuickSort{
                 i++;
             }
             if(i < j) {
+            System.out.println("before second swap" + "i:"+i+" j:"+j);
                 swap(arr, i, j);
                 j--;
             }
@@ -64,16 +66,23 @@ public class ArrayQuickSort{
         partition(arr, l, i - 1);
         partition(arr, i + 1, h);
     }
+
+    public static void swap(int[] arr, int i, int j) {
+        int tmp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = tmp;
+    }
     
     public static void main(String[] args){
         //int[] test = {60, 71, 49, 11, 82, 49, 3, 66};
         //int[] test = {1,2,3,4,5,6};
-        int[] test = {0,1,0,0,1,2,0,1};
+        //int[] test = {0,1,0,0,1,2,0,1};
+        int[] test = {5, 20, 10, 23, 50, 100, 75};
 
         for(int x: test)
             System.out.print(x + " ");
         System.out.println();
-        quickSort(test);
+        quicksortAlt(test);
         for(int x: test)
             System.out.print(x + " ");
         System.out.println();

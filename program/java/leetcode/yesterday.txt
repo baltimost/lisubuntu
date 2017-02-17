@@ -155,9 +155,13 @@ together with implement tomorrow kmp?
 52	N-Queens II	34.7%	Hard
 51	N-Queens	26.0%	Hard
 99	Recover Binary Search Tree	24.1%	Hard
+
+127	Word Ladder	18.7%	Medium
+Word LadderII
 ------------------------------
 ------------------------------
 ------------------------------
+
 139	Word Break II	17.0%	Hard
 139	Word Break	21.9%	Medium
 87	Scramble String	23.4%	Hard
@@ -167,7 +171,5 @@ together with implement tomorrow kmp?
 
 30	Substring with Concatenation of All Words	18.6%	Hard
 146	LRU Cache	14.4%	Hard
-
-127	Word Ladder	18.7%	Medium
 
 104	Maximum Depth of Binary Tree	44.6%	Easy

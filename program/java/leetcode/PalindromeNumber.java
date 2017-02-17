@@ -10,7 +10,6 @@ public class PalindromeNumber{
     }
     */
     /*
-    */
     public static boolean isPalindrome(int x){
         int denominator = 1;
         int head, tail;
@@ -41,6 +40,17 @@ public class PalindromeNumber{
             return false;
     }//89ms
     */
+    public static boolean isPalindrome(int x) {
+        if(x < 0 || (x != 0 && x % 10 == 0)) return false;
+        int reverse = 0;
+        while(x > reverse) {
+            reverse = reverse * 10 + x % 10;
+            x /= 10;
+        }
+        System.out.println("x:" + x + " reverse:" + reverse);
+        return x == reverse || x == reverse / 10;
+    }
+    /**/
     public static void main(String[] args){
         long bf = System.currentTimeMillis();
         long af, interval;
@@ -49,10 +59,14 @@ public class PalindromeNumber{
         System.out.println(isPalindrome(13100));
         System.out.println(isPalindrome(-12321));
         System.out.println(isPalindrome(1000021));
+        System.out.println(isPalindrome(1000001));
+        System.out.println(isPalindrome(10));
+        /*
         for(int i = 0;i < 1000000;i++)
             isPalindrome(381292183);
         af = System.currentTimeMillis();
         interval = af - bf;
         System.out.println(interval);
+        */
     }
 }

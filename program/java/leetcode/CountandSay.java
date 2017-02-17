@@ -77,8 +77,9 @@ public class CountandSay{
         return prev;
     }
     public static void main(String[] args){
-        int n = 20;
+        int n = 7;
         String result = countAndSay(n); 
         System.out.println(result);
     } 
+
 }

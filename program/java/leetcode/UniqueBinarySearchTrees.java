@@ -13,6 +13,7 @@ public class UniqueBinarySearchTrees{
         return d[d.length - 1];
     }
     public static void main(String[] args){
+        System.out.println(numTrees(1));
         System.out.println(numTrees(4));
         System.out.println(numTrees(5));
     }
